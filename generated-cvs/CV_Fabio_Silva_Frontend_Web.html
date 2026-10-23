@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fábio Silva - Frontend & Web Development CV</title>
+  <style>
+    :root { --accent: #4338ca; }
+    
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    font-size: 10.5px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page {
+    size: A4;
+    margin: 10mm 13mm;
+  }
+  .page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+  }
+  .target-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 1px;
+    letter-spacing: 0.2px;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #475569;
+    font-weight: 500;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .contact-item a {
+    color: #475569;
+    text-decoration: none;
+  }
+  .badge-relocate {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 9.5px;
+  }
+
+  /* Two Column Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+  }
+
+  /* Section Headings */
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0f172a;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  /* Left Column Elements */
+  .sidebar-section {
+    margin-bottom: 11px;
+  }
+  .summary-text {
+    font-size: 9.8px;
+    color: #334155;
+    line-height: 1.45;
+    text-align: justify;
+  }
+  .edu-item {
+    margin-bottom: 7px;
+  }
+  .edu-degree {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .edu-school {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 9.5px;
+  }
+  .edu-meta {
+    color: #64748b;
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+  .edu-details {
+    color: #475569;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 6px;
+  }
+  .skill-group-name {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 9.5px;
+    margin-bottom: 2px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5px;
+  }
+  .skill-tag {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 1.5px 5.5px;
+    border-radius: 3px;
+    font-size: 8.5px;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  /* Languages */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    padding: 2px 0;
+    color: #334155;
+  }
+  .lang-level {
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* Right Column: Experience & Projects */
+  .exp-item {
+    margin-bottom: 9px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5px;
+  }
+  .exp-role {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .exp-company {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .exp-dates {
+    font-size: 9px;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .exp-bullets {
+    list-style: disc;
+    padding-left: 14px;
+    color: #334155;
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+  .exp-bullets li {
+    margin-bottom: 2px;
+  }
+
+  /* Project Box */
+  .proj-item {
+    background: #f8fafc;
+    border-left: 2.5px solid var(--accent);
+    padding: 5px 8px;
+    margin-bottom: 6px;
+    border-radius: 0 4px 4px 0;
+  }
+  .proj-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .proj-tech {
+    font-size: 8.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .proj-desc {
+    font-size: 9px;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1 class="name">Fábio Júnior Fernandes Silva</h1>
+      <div class="contact-bar">
+        <span class="contact-item">📧 fabioz262006@gmail.com</span>
+        <span class="contact-item">📞 +351 930 534 067</span>
+        <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
+        <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left Column: Summary, Education, Skills, Languages -->
+      <aside>
+        <section class="sidebar-section">
+          <h2 class="section-title">Profile</h2>
+          <p class="summary-text">
+            Undergraduate Web Multimedia Development student at IPCA (Portugal) with a solid technical background in computer hardware, networking, and relational databases. Seeking a 4-month university curricular internship in Poland (February 1 – June 30, 2027) focused on Frontend Engineering, Modern Web Frameworks (TypeScript/React/Angular), and component-driven UI development. Bilateral Erasmus+/university protocol and insurance fully arranged by institution.
+          </p>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">BSc in Web Multimedia Development</div>
+            <div class="edu-school">IPCA (Polytechnic Institute of Cávado & Ave)</div>
+            <div class="edu-meta">2024 – Present (Graduating 2027) • Portugal</div>
+            <div class="edu-details">
+              Focus: TypeScript, React, Angular, Web Architectures, REST APIs, UI/UX Design, and Relational Databases.
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Professional IT Management (Level 4)</div>
+            <div class="edu-school">Escola Secundária de Vila Verde</div>
+            <div class="edu-meta">Sep 2021 – Jul 2024 • Portugal</div>
+            <div class="edu-details">
+              Hardware assembly & diagnostics, Windows/Linux OS admin, networking (TCP/IP), peripheral maintenance.
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skill-group">
+            <div class="skill-group-name">Frontend & Languages</div>
+            <div class="skill-tags">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">HTML5 & CSS3</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Architecture & Backend</div>
+            <div class="skill-tags">
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">HTTP Services</span>
+              <span class="skill-tag">SQL & Relational DBs</span>
+              <span class="skill-tag">Node.js basics</span>
+              <span class="skill-tag">SQLite</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Tools & Systems</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Hardware Diagnostics</span>
+              <span class="skill-tag">Linux / Windows</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item">
+            <span>English</span>
+            <span class="lang-level">Fluent / Professional (C1)</span>
+          </div>
+          <div class="lang-item">
+            <span>Portuguese</span>
+            <span class="lang-level">Native Speaker</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Column: Projects & Experience -->
+      <main>
+        <section style="margin-bottom: 11px;">
+          <h2 class="section-title">Featured Web & Software Projects</h2>
+          
+          <div class="proj-item">
+            <div class="proj-title">CineLog — Movie & TV Series Tracking PWA (Live Production App)</div>
+            <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • Vercel • Live: cinelog-phi.vercel.app</div>
+            <div class="proj-desc">
+              Architected and deployed a responsive Progressive Web Application for film and TV series discovery, review diaries, and custom collections. Integrated The Movie Database (TMDB) API endpoints, implemented fluid touch navigation, responsive dark-canvas styling, and deployed to production on Vercel.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Poland Internship Hunter & Email Automation Desktop App</div>
+            <div class="proj-tech">TypeScript • React • Tailwind CSS • SQLite • Electron • Nodemailer</div>
+            <div class="proj-desc">
+              Built an automated desktop CRM & outreach platform tailored for European internships. Implemented 5-factor fit scoring algorithms, dynamic email generation, local SQLite database persistence, and rate-limited direct SMTP transmission.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Work & Internship Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">IT Systems & Database Support Intern</span> • 
+                <span class="exp-company">Hospital Misericórdia de Vila Verde</span>
+              </div>
+              <span class="exp-dates">May 2024 – Jun 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Supported health information system operations, verifying database integrity and updating digital patient and administrative registries with zero error tolerance.</li>
+              <li>Authored and formatted technical documentation, system reports, and procedural manuals for institutional personnel.</li>
+              <li>Diagnosed and resolved hardware, workstation network, and software troubleshooting tickets across hospital departments.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Database & Systems Support Intern</span> • 
+                <span class="exp-company">Câmara Municipal de Vila Verde (City Hall)</span>
+              </div>
+              <span class="exp-dates">Jun 2023 – Jul 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Assisted IT department in compiling, validating, and maintaining municipal databases of suppliers and citizen records.</li>
+              <li>Conducted data cleaning routines and cross-referenced relational datasets to eliminate duplicate entries across municipal branches.</li>
+              <li>Coordinated with public officers to configure workstations and resolve operational software bottlenecks.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Digital Records & Systems Intern</span> • 
+                <span class="exp-company">OnDigital</span>
+              </div>
+              <span class="exp-dates">Jun 2022 – Jul 2022</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Managed structured digital asset archiving, data verification, and digital inventory upkeep for commercial clients.</li>
+              <li>Maintained accurate digital logs to ensure prompt retrieval and backup continuity of enterprise files.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

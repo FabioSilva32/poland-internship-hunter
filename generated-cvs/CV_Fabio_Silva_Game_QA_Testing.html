@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fábio Silva - Game QA & Software Testing CV</title>
+  <style>
+    :root { --accent: #059669; }
+    
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    font-size: 10.5px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page {
+    size: A4;
+    margin: 10mm 13mm;
+  }
+  .page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+  }
+  .target-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 1px;
+    letter-spacing: 0.2px;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #475569;
+    font-weight: 500;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .contact-item a {
+    color: #475569;
+    text-decoration: none;
+  }
+  .badge-relocate {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 9.5px;
+  }
+
+  /* Two Column Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+  }
+
+  /* Section Headings */
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0f172a;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  /* Left Column Elements */
+  .sidebar-section {
+    margin-bottom: 11px;
+  }
+  .summary-text {
+    font-size: 9.8px;
+    color: #334155;
+    line-height: 1.45;
+    text-align: justify;
+  }
+  .edu-item {
+    margin-bottom: 7px;
+  }
+  .edu-degree {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .edu-school {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 9.5px;
+  }
+  .edu-meta {
+    color: #64748b;
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+  .edu-details {
+    color: #475569;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 6px;
+  }
+  .skill-group-name {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 9.5px;
+    margin-bottom: 2px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5px;
+  }
+  .skill-tag {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 1.5px 5.5px;
+    border-radius: 3px;
+    font-size: 8.5px;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  /* Languages */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    padding: 2px 0;
+    color: #334155;
+  }
+  .lang-level {
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* Right Column: Experience & Projects */
+  .exp-item {
+    margin-bottom: 9px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5px;
+  }
+  .exp-role {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .exp-company {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .exp-dates {
+    font-size: 9px;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .exp-bullets {
+    list-style: disc;
+    padding-left: 14px;
+    color: #334155;
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+  .exp-bullets li {
+    margin-bottom: 2px;
+  }
+
+  /* Project Box */
+  .proj-item {
+    background: #f8fafc;
+    border-left: 2.5px solid var(--accent);
+    padding: 5px 8px;
+    margin-bottom: 6px;
+    border-radius: 0 4px 4px 0;
+  }
+  .proj-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .proj-tech {
+    font-size: 8.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .proj-desc {
+    font-size: 9px;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1 class="name">Fábio Júnior Fernandes Silva</h1>
+      <div class="contact-bar">
+        <span class="contact-item">📧 fabioz262006@gmail.com</span>
+        <span class="contact-item">📞 +351 930 534 067</span>
+        <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
+        <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left Column -->
+      <aside>
+        <section class="sidebar-section">
+          <h2 class="section-title">Profile</h2>
+          <p class="summary-text">
+            Web Multimedia Development undergraduate at IPCA (Portugal) with formal technical certification in Computer Hardware & Systems Management. Passionate gamer and rigorous tester seeking a 4-month curricular internship in Poland (February 1 – June 30, 2027) with Polish game studios (CD Projekt RED, 11 bit studios, Ten Square Games) or software engineering teams. Skilled in bug reproduction, test execution, hardware diagnostics, and issue tracking.
+          </p>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">BSc in Web Multimedia Development</div>
+            <div class="edu-school">IPCA (Polytechnic Institute of Cávado & Ave)</div>
+            <div class="edu-meta">2024 – Present (Graduating 2027) • Portugal</div>
+            <div class="edu-details">
+              Focus: Software Development, Interactive Multimedia Pipelines, Systems Testing, Relational Databases, Web Technologies.
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Professional IT Management (Level 4)</div>
+            <div class="edu-school">Escola Secundária de Vila Verde</div>
+            <div class="edu-meta">Sep 2021 – Jul 2024 • Portugal</div>
+            <div class="edu-details">
+              Hardware assembly, GPU/CPU stress diagnostics, OS fault isolation (Windows/Linux), LAN networking, peripheral profiling.
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">QA & Technical Skills</h2>
+          <div class="skill-group">
+            <div class="skill-group-name">Testing & Methodologies</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Functional Testing</span>
+              <span class="skill-tag">Regression Testing</span>
+              <span class="skill-tag">Bug Reproduction</span>
+              <span class="skill-tag">Test Plan Execution</span>
+              <span class="skill-tag">Jira / Bug Tracking</span>
+              <span class="skill-tag">Edge-Case Analysis</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Hardware & Environments</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Hardware Assembly</span>
+              <span class="skill-tag">Performance Profiling</span>
+              <span class="skill-tag">Windows & Linux</span>
+              <span class="skill-tag">GPU / Driver Testing</span>
+              <span class="skill-tag">Network Diagnostics</span>
+              <span class="skill-tag">Crash Log Reading</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Software & Scripting</div>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript / TypeScript</span>
+              <span class="skill-tag">SQL Databases</span>
+              <span class="skill-tag">Git Version Control</span>
+              <span class="skill-tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item">
+            <span>English</span>
+            <span class="lang-level">Fluent / Professional (C1)</span>
+          </div>
+          <div class="lang-item">
+            <span>Portuguese</span>
+            <span class="lang-level">Native Speaker</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Column -->
+      <main>
+        <section style="margin-bottom: 11px;">
+          <h2 class="section-title">Featured QA & Software Testing Projects</h2>
+          
+          <div class="proj-item">
+            <div class="proj-title">CineLog PWA — Cross-Device Functional & API Testing</div>
+            <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • Network Fault Tolerance • Live App</div>
+            <div class="proj-desc">
+              Conducted cross-browser and mobile device verification for a movie tracking web application. Tested TMDB REST API response edge-cases, asynchronous media poster caching, network latency resilience, and touch interaction fidelity across iOS and Android viewports (cinelog-phi.vercel.app).
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">End-to-End Application Testing Matrix — Poland Internship Hunter</div>
+            <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite</div>
+            <div class="proj-desc">
+              Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures. Isolated and resolved critical data parsing edge cases.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Technical Experience & Systems Support</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Systems & Verification Intern</span> • 
+                <span class="exp-company">Hospital Misericórdia de Vila Verde</span>
+              </div>
+              <span class="exp-dates">May 2024 – Jun 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Conducted system verification checks on clinical databases to ensure zero corrupted patient records and strict data reliability.</li>
+              <li>Diagnosed hardware failures and application crashes on hospital workstations, logging actionable reproduction steps for senior technicians.</li>
+              <li>Verified software installations and network printer connectivity across high-pressure hospital departments.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Data Validation & Systems Intern</span> • 
+                <span class="exp-company">Câmara Municipal de Vila Verde</span>
+              </div>
+              <span class="exp-dates">Jun 2023 – Jul 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Performed systematic auditing and data verification across municipal databases, flagging discrepancies and duplicate records.</li>
+              <li>Created structured validation routines to ensure data entry compliance across municipal service counters.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Data Integrity & Archival Intern</span> • 
+                <span class="exp-company">OnDigital</span>
+              </div>
+              <span class="exp-dates">Jun 2022 – Jul 2022</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Executed QA checks on scanned enterprise files and database logs, maintaining 99%+ accuracy during digital transformation projects.</li>
+              <li>Maintained strict adherence to digital storage standards and naming conventions.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

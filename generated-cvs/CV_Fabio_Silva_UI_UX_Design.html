@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fábio Silva - UI/UX Design & Prototyping CV</title>
+  <style>
+    :root { --accent: #7c3aed; }
+    
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    font-size: 10.5px;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page {
+    size: A4;
+    margin: 10mm 13mm;
+  }
+  .page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .name {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+  }
+  .target-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 1px;
+    letter-spacing: 0.2px;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #475569;
+    font-weight: 500;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .contact-item a {
+    color: #475569;
+    text-decoration: none;
+  }
+  .badge-relocate {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 9.5px;
+  }
+
+  /* Two Column Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+  }
+
+  /* Section Headings */
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0f172a;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  /* Left Column Elements */
+  .sidebar-section {
+    margin-bottom: 11px;
+  }
+  .summary-text {
+    font-size: 9.8px;
+    color: #334155;
+    line-height: 1.45;
+    text-align: justify;
+  }
+  .edu-item {
+    margin-bottom: 7px;
+  }
+  .edu-degree {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .edu-school {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 9.5px;
+  }
+  .edu-meta {
+    color: #64748b;
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+  .edu-details {
+    color: #475569;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 6px;
+  }
+  .skill-group-name {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 9.5px;
+    margin-bottom: 2px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5px;
+  }
+  .skill-tag {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 1.5px 5.5px;
+    border-radius: 3px;
+    font-size: 8.5px;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  /* Languages */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    padding: 2px 0;
+    color: #334155;
+  }
+  .lang-level {
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* Right Column: Experience & Projects */
+  .exp-item {
+    margin-bottom: 9px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5px;
+  }
+  .exp-role {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .exp-company {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  .exp-dates {
+    font-size: 9px;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .exp-bullets {
+    list-style: disc;
+    padding-left: 14px;
+    color: #334155;
+    font-size: 9.5px;
+    line-height: 1.4;
+  }
+  .exp-bullets li {
+    margin-bottom: 2px;
+  }
+
+  /* Project Box */
+  .proj-item {
+    background: #f8fafc;
+    border-left: 2.5px solid var(--accent);
+    padding: 5px 8px;
+    margin-bottom: 6px;
+    border-radius: 0 4px 4px 0;
+  }
+  .proj-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .proj-tech {
+    font-size: 8.5px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .proj-desc {
+    font-size: 9px;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1 class="name">Fábio Júnior Fernandes Silva</h1>
+      <div class="contact-bar">
+        <span class="contact-item">📧 fabioz262006@gmail.com</span>
+        <span class="contact-item">📞 +351 930 534 067</span>
+        <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
+        <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left Column -->
+      <aside>
+        <section class="sidebar-section">
+          <h2 class="section-title">Profile</h2>
+          <p class="summary-text">
+            Creative and user-centered Web Multimedia Development undergraduate at IPCA (Portugal) bridging the gap between product design, interaction systems, and frontend code. Seeking a 4-month university curricular internship in Poland (February 1 – June 30, 2027) in UI/UX Design, Design Systems, or Interactive Multimedia. Hands-on experience building component design libraries, high-fidelity Figma prototypes, and clean user journeys.
+          </p>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">BSc in Web Multimedia Development</div>
+            <div class="edu-school">IPCA (Polytechnic Institute of Cávado & Ave)</div>
+            <div class="edu-meta">2024 – Present (Graduating 2027) • Portugal</div>
+            <div class="edu-details">
+              Focus: Interface Design & Usability (UI/UX), Multimedia Content Production, Design Systems, Human-Centered Interaction, Frontend Foundations.
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Professional IT Management (Level 4)</div>
+            <div class="edu-school">Escola Secundária de Vila Verde</div>
+            <div class="edu-meta">Sep 2021 – Jul 2024 • Portugal</div>
+            <div class="edu-details">
+              Information systems architecture, digital hardware, peripheral diagnostics, multimedia workstations.
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Design & Technical Skills</h2>
+          <div class="skill-group">
+            <div class="skill-group-name">UI/UX & Prototyping</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Interactive Prototyping</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">User Flows & IA</span>
+              <span class="skill-tag">Usability Testing</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Multimedia & Code</div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5 & CSS3</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">TypeScript basics</span>
+              <span class="skill-tag">Vector & Raster Assets</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">Accessibility (WCAG)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-name">Collaboration & Methods</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Design-to-Dev Handoff</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">Agile / Kanban</span>
+              <span class="skill-tag">Heuristic Analysis</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item">
+            <span>English</span>
+            <span class="lang-level">Fluent / Professional (C1)</span>
+          </div>
+          <div class="lang-item">
+            <span>Portuguese</span>
+            <span class="lang-level">Native Speaker</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Right Column -->
+      <main>
+        <section style="margin-bottom: 11px;">
+          <h2 class="section-title">Featured UI/UX & Multimedia Projects</h2>
+          
+          <div class="proj-item">
+            <div class="proj-title">CineLog — Mobile PWA & Cinema Discovery UI/UX Architecture</div>
+            <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • Component Hierarchy • Live: cinelog-phi.vercel.app</div>
+            <div class="proj-desc">
+              Designed an immersive, tactile cinema tracking application interface. Formatted high-contrast movie poster exploration grids, responsive bottom-sheet navigation, user diary review logging, and custom collection organization built for mobile and desktop viewports.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Poland Internship Hunter — Design System & UI Architecture</div>
+            <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • Micro-interactions</div>
+            <div class="proj-desc">
+              Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions minimizing cognitive load for students.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Professional & Technical Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Digital Documentation & Systems Intern</span> • 
+                <span class="exp-company">Hospital Misericórdia de Vila Verde</span>
+              </div>
+              <span class="exp-dates">May 2024 – Jun 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Standardized formatting, layout, and visual readability of official healthcare technical documents, reports, and administrative protocols.</li>
+              <li>Assisted medical staff in navigating internal healthcare applications, collecting user feedback to troubleshoot interface friction points.</li>
+              <li>Maintained strict patient database organization, ensuring information accessibility across healthcare departments.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Information Architecture & Database Intern</span> • 
+                <span class="exp-company">Câmara Municipal de Vila Verde</span>
+              </div>
+              <span class="exp-dates">Jun 2023 – Jul 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Restructured municipal data registries to improve internal navigation and record retrieval speeds for civil servants.</li>
+              <li>Collaborated across departments to audit public service forms, ensuring data fields were clear, uniform, and user-friendly.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <span class="exp-role">Digital Media & Data Archiving Intern</span> • 
+                <span class="exp-company">OnDigital</span>
+              </div>
+              <span class="exp-dates">Jun 2022 – Jul 2022</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Processed, cataloged, and organized digital media files and commercial assets with consistent tagging and metadata hierarchies.</li>
+              <li>Ensured visual and digital assets complied with client archival specifications.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

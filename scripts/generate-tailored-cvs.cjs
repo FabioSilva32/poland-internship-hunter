@@ -353,7 +353,7 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">Poland Internship Hunter & Email Automation Desktop App</div>
-            <div class="proj-tech">TypeScript • React • Tailwind CSS • SQLite • Electron • Nodemailer</div>
+            <div class="proj-tech">TypeScript • React • Tailwind CSS • SQLite • Electron • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
             <div class="proj-desc">
               Built an automated desktop CRM & outreach platform tailored for European internships. Implemented 5-factor fit scoring algorithms, dynamic email generation, local SQLite database persistence, and rate-limited direct SMTP transmission.
             </div>
@@ -538,7 +538,7 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">Poland Internship Hunter — Design System & UI Architecture</div>
-            <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • Micro-interactions</div>
+            <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
             <div class="proj-desc">
               Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions minimizing cognitive load for students.
             </div>
@@ -722,7 +722,7 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">End-to-End Application Testing Matrix — Poland Internship Hunter</div>
-            <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite</div>
+            <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
             <div class="proj-desc">
               Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures. Isolated and resolved critical data parsing edge cases.
             </div>

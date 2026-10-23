@@ -115,6 +115,22 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setIsGlobalPaused(res.isPaused);
       });
     }
+
+    let unsubAutoSync: any = null;
+    if (window.desktopAPI?.onAutoUpdateCompleted) {
+      unsubAutoSync = window.desktopAPI.onAutoUpdateCompleted((data: any) => {
+        refreshMetrics();
+        if (data.newOpportunities > 0 || data.newCompanies > 0) {
+          showToast(`Scheduled Sync: Found ${data.newOpportunities} new opportunities & ${data.newCompanies} new companies!`, 'success');
+        } else {
+          showToast('Scheduled Background Sync completed: Database up to date.', 'info');
+        }
+      });
+    }
+
+    return () => {
+      if (unsubAutoSync) unsubAutoSync();
+    };
   }, []);
 
   return (

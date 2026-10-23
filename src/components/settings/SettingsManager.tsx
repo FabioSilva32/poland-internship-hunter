@@ -44,6 +44,9 @@ export const SettingsManager: React.FC = () => {
   const [secondFollowUpDays, setSecondFollowUpDays] = useState<number>(7);
   const [maxFollowUps, setMaxFollowUps] = useState<number>(2);
   const [aiProvider, setAiProvider] = useState<string>('gemini');
+  const [autoSyncEnabled, setAutoSyncEnabled] = useState<boolean>(true);
+  const [autoSyncIntervalHours, setAutoSyncIntervalHours] = useState<number>(12);
+  const [lastSyncInfo, setLastSyncInfo] = useState<any>(null);
   const [auditLogs, setAuditLogs] = useState<AuditLog[]>([]);
   const [saving, setSaving] = useState<boolean>(false);
 
@@ -62,8 +65,19 @@ export const SettingsManager: React.FC = () => {
         if (data.second_follow_up_days) setSecondFollowUpDays(parseInt(data.second_follow_up_days, 10));
         if (data.max_follow_ups) setMaxFollowUps(parseInt(data.max_follow_ups, 10));
         if (data.ai_provider) setAiProvider(data.ai_provider);
+        if (data.auto_sync_enabled !== undefined) setAutoSyncEnabled(data.auto_sync_enabled === 'true');
+        if (data.auto_sync_interval_hours) setAutoSyncIntervalHours(parseInt(data.auto_sync_interval_hours, 10));
       } catch (err: any) {
         console.error(err);
+      }
+    }
+
+    if (window.desktopAPI?.getLastSearchRun) {
+      try {
+        const info = await window.desktopAPI.getLastSearchRun();
+        setLastSyncInfo(info);
+      } catch (err: any) {
+        console.warn(err);
       }
     }
 
@@ -92,6 +106,8 @@ export const SettingsManager: React.FC = () => {
         await window.desktopAPI.updateSetting('second_follow_up_days', secondFollowUpDays.toString());
         await window.desktopAPI.updateSetting('max_follow_ups', maxFollowUps.toString());
         await window.desktopAPI.updateSetting('ai_provider', aiProvider);
+        await window.desktopAPI.updateSetting('auto_sync_enabled', autoSyncEnabled.toString());
+        await window.desktopAPI.updateSetting('auto_sync_interval_hours', autoSyncIntervalHours.toString());
 
         if (gmailAppPassword.trim()) {
           await window.desktopAPI.updateSetting('gmail_app_password', gmailAppPassword.trim());
@@ -520,11 +536,79 @@ export const SettingsManager: React.FC = () => {
           </div>
         </div>
 
+        {/* Scheduled Background Discovery */}
+        <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
+          <div className="flex items-center justify-between">
+            <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+              <RefreshCw className="w-4 h-4 text-emerald-400" />
+              4. Scheduled Company & Vacancy Discovery (Rate-Limit Protected)
+            </h4>
+            <span className="text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded font-mono">
+              Safe IP Protection Active
+            </span>
+          </div>
+
+          <div className="space-y-4 text-xs">
+            <div className="flex items-center justify-between p-3.5 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="space-y-0.5">
+                <span className="text-slate-200 font-semibold block">Automatic Background Sync</span>
+                <span className="text-[11px] text-slate-400 block">
+                  Periodically queries verified Polish engineering boards (Greenhouse, Lever, Ashby) with polite 1,000ms inter-request delays.
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setAutoSyncEnabled(!autoSyncEnabled)}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                  autoSyncEnabled ? 'bg-indigo-600' : 'bg-slate-700'
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    autoSyncEnabled ? 'translate-x-6' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+            </div>
+
+            {autoSyncEnabled && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                <div className="space-y-1">
+                  <label className="text-slate-400">Sync Cadence (Hours between checks)</label>
+                  <select
+                    value={autoSyncIntervalHours}
+                    onChange={(e) => setAutoSyncIntervalHours(parseInt(e.target.value, 10))}
+                    className="w-full p-2.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 font-medium focus:outline-none focus:border-indigo-500"
+                  >
+                    <option value={12}>Every 12 Hours (Recommended — Balanced & Safe)</option>
+                    <option value={18}>Every 18 Hours</option>
+                    <option value={24}>Every 24 Hours (Once Daily)</option>
+                    <option value={6}>Every 6 Hours</option>
+                  </select>
+                </div>
+
+                <div className="p-3 rounded-lg bg-slate-950/40 border border-slate-800/80 space-y-1 text-[11px] text-slate-400 flex flex-col justify-center">
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-500">Last completed sync:</span>
+                    <span className="text-slate-300 font-mono">
+                      {lastSyncInfo?.lastRun?.created_at ? new Date(lastSyncInfo.lastRun.created_at).toLocaleString() : 'Not yet run'}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-slate-500">Protection mode:</span>
+                    <span className="text-emerald-400 font-semibold">1,000ms delay / endpoint</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Data Exports & SQLite Backups */}
         <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
           <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
             <Database className="w-4 h-4 text-emerald-400" />
-            4. Data Exports & Local Database
+            5. Data Exports & Local Database
           </h4>
 
           <div className="space-y-3 text-xs">

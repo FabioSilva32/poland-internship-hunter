@@ -363,6 +363,8 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
     setGlobalPause: async (paused: boolean) => ({ isPaused: paused }),
     getGlobalPause: async () => ({ isPaused: false }),
     runSearch: async (params: any) => ({ success: true, newOpportunities: 2, newCompanies: 0 }),
+    getLastSearchRun: async () => ({ lastRun: null, autoSyncEnabled: true, intervalHours: 12 }),
+    onAutoUpdateCompleted: (cb: any) => () => {},
     getFollowUps: async () => mockStorage.followUps,
     updateFollowUpStatus: async (id: string, status: string) => ({ success: true }),
     getSettings: async () => mockStorage.settings,

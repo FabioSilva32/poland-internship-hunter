@@ -34,6 +34,12 @@ contextBridge.exposeInMainWorld('desktopAPI', {
 
   // Search Engine
   runSearch: (params) => ipcRenderer.invoke('search:run', params),
+  getLastSearchRun: () => ipcRenderer.invoke('search:getLastRun'),
+  onAutoUpdateCompleted: (callback) => {
+    const handler = (event, data) => callback(data);
+    ipcRenderer.on('search:autoUpdateCompleted', handler);
+    return () => ipcRenderer.removeListener('search:autoUpdateCompleted', handler);
+  },
 
   // AI & Generator
   generateEmail: (params) => ipcRenderer.invoke('ai:generateEmail', params),

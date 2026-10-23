@@ -52,11 +52,73 @@ function createWindow() {
   });
 }
 
+let autoSearchTimer = null;
+
+function setupScheduledSearch() {
+  if (autoSearchTimer) clearInterval(autoSearchTimer);
+
+  const checkAndRun = async () => {
+    try {
+      if (!db) return;
+      const enabledRow = db.prepare("SELECT value FROM settings WHERE key = 'auto_sync_enabled'").get();
+      const enabled = enabledRow ? enabledRow.value === 'true' : true;
+      if (!enabled) return;
+
+      const intervalHoursRow = db.prepare("SELECT value FROM settings WHERE key = 'auto_sync_interval_hours'").get();
+      const intervalHours = intervalHoursRow ? parseFloat(intervalHoursRow.value) || 12 : 12;
+      const intervalMs = intervalHours * 60 * 60 * 1000;
+
+      // Find last successful search run
+      const lastRun = db.prepare("SELECT created_at FROM search_runs WHERE status = 'completed' ORDER BY created_at DESC LIMIT 1").get();
+      let shouldRun = false;
+
+      if (!lastRun || !lastRun.created_at) {
+        shouldRun = true;
+      } else {
+        const lastRunTime = new Date(lastRun.created_at).getTime();
+        const now = Date.now();
+        if (now - lastRunTime >= intervalMs) {
+          shouldRun = true;
+        }
+      }
+
+      if (shouldRun) {
+        console.log(`[AutoSearch] Scheduled background search triggered (Cadence: ${intervalHours}h)...`);
+        const result = await runCompanyAndInternshipSearch({
+          db,
+          city: 'All',
+          category: 'All',
+          includeSpeculative: true,
+          includeOfficial: true
+        });
+        console.log(`[AutoSearch] Completed! Discovered ${result.newOpportunities} opps, ${result.newCompanies} companies.`);
+
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          mainWindow.webContents.send('search:autoUpdateCompleted', {
+            newOpportunities: result.newOpportunities,
+            newCompanies: result.newCompanies,
+            timestamp: new Date().toISOString()
+          });
+        }
+      }
+    } catch (err) {
+      console.warn('[AutoSearch] Error during scheduled check:', err.message);
+    }
+  };
+
+  // Run initial check 15 seconds after launch to ensure window is ready
+  setTimeout(checkAndRun, 15000);
+
+  // Check every 15 minutes if it is time to run the scheduled sync
+  autoSearchTimer = setInterval(checkAndRun, 15 * 60 * 1000);
+}
+
 app.whenReady().then(async () => {
   // Initialize SQLite database
   db = await initializeDatabase();
   registerIpcHandlers();
   createWindow();
+  setupScheduledSearch();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
@@ -455,6 +517,17 @@ function registerIpcHandlers() {
       includeSpeculative: params.includeSpeculative !== false,
       includeOfficial: params.includeOfficial !== false
     });
+  });
+
+  ipcMain.handle('search:getLastRun', async () => {
+    const lastRun = db.prepare("SELECT * FROM search_runs WHERE status = 'completed' ORDER BY created_at DESC LIMIT 1").get();
+    const intervalRow = db.prepare("SELECT value FROM settings WHERE key = 'auto_sync_interval_hours'").get();
+    const enabledRow = db.prepare("SELECT value FROM settings WHERE key = 'auto_sync_enabled'").get();
+    return {
+      lastRun: lastRun || null,
+      autoSyncEnabled: enabledRow ? enabledRow.value === 'true' : true,
+      intervalHours: intervalRow ? parseFloat(intervalRow.value) || 12 : 12
+    };
   });
 
   // 9. Follow-Ups

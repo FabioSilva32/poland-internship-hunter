@@ -1,6 +1,12 @@
 // AI Email Generator & Template Service
 // Strictly enforces accuracy: never invents skills, projects, or credentials not in profile
 
+const getLiveProjectsBlock = (p) => `• CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app/?tab=explore
+• Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter
+• Retiro Interior (Tourism Portal): https://retirointerior.netlify.app/#conceito
+• StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app/portfolio
+• GitHub Profile: ${p.github_url || 'https://github.com/FabioSilva32'}`;
+
 const TEMPLATES = {
   // A. Speculative internship inquiry
   speculative_inquiry: {
@@ -17,10 +23,8 @@ I have been following ${c.name}'s work${c.products ? ` on ${c.products}` : ''} a
 
 I am writing to inquire whether ${c.name} accepts university internship placements during the Spring 2027 semester. I would welcome the opportunity to contribute to your engineering or design teams while completing my academic requirements.
 
-My CV is attached, and you can view my work and verified code projects here:
-• Portfolio: ${p.portfolio_url || 'Available upon request'}
-• GitHub: ${p.github_url || 'Available upon request'}
-• LinkedIn: ${p.linkedin_url || 'Available upon request'}
+My CV is attached, and you can explore my live deployed web applications and source code here:
+${getLiveProjectsBlock(p)}
 
 Thank you for your time and consideration.
 
@@ -44,10 +48,8 @@ ${c.name} has built a standout reputation${c.products ? ` through projects like 
 
 Does ${c.name} consider speculative curricular internship placements for university students during the Spring 2027 period? An official university internship protocol and insurance can be fully arranged by my institution.
 
-I have attached my current CV for your review. You can also explore my project repositories and design case studies at:
-- Portfolio: ${p.portfolio_url || 'Available on request'}
-- GitHub: ${p.github_url || 'Available on request'}
-- LinkedIn: ${p.linkedin_url || 'Available on request'}
+I have attached my current CV for your review. You can also explore my live applications, project repositories, and design case studies at:
+${getLiveProjectsBlock(p)}
 
 I would be delighted to speak briefly if there might be an opening or future intake. Thank you very much for your time.
 
@@ -68,7 +70,8 @@ I am an undergraduate student in Desenvolvimento Web Multimédia at IPCA in Port
 
 My background directly matches the technical skills required for this role, specifically ${c.requiredTech || p.skillsList || 'TypeScript, React, and UI/UX design'}. Through both coursework and practical project work, I am accustomed to writing clean, maintainable code, adhering to design specifications, and collaborating via Git.
 
-Please find my CV attached. You can also review my code repositories at ${p.github_url} and interactive portfolio at ${p.portfolio_url}.
+Please find my CV attached. You can also explore my live deployed applications and verified repositories:
+${getLiveProjectsBlock(p)}
 
 I would welcome the opportunity to discuss how my profile aligns with the needs of ${c.name}.
 
@@ -211,9 +214,8 @@ My technical profile is centered on modern web applications:
 
 I am seeking an environment where I can contribute to production features, learn from senior engineers, and complete my university degree requirements.
 
-Please review my attached CV, or inspect my work directly:
-• Live Portfolio: ${p.portfolio_url}
-• Code Repositories: ${p.github_url}
+Please review my attached CV, or inspect my live deployed projects and code:
+${getLiveProjectsBlock(p)}
 
 Thank you for your time, and I look forward to any potential openings.
 
@@ -482,7 +484,13 @@ CRITICAL RULES:
 2. The student studies Desenvolvimento Web Multimédia at IPCA, Portugal.
 3. Internship timeframe: February 1, 2027 to June 30, 2027 (4 months) in Poland.
 4. Keep the tone professional, sincere, concise, and non-generic. No cheesy praise or artificial buzzwords.
-5. Return a JSON object with strictly two keys: "subject" and "body".
+5. Highlight the student's live deployed projects and code repositories:
+   • CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app/?tab=explore
+   • Poland Internship Hunter (Desktop CRM): https://github.com/FabioSilva32/poland-internship-hunter
+   • Retiro Interior (Tourism Platform): https://retirointerior.netlify.app/#conceito
+   • StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app/portfolio
+   • GitHub: https://github.com/FabioSilva32
+6. Return a JSON object with strictly two keys: "subject" and "body".
 
 Student Profile: ${JSON.stringify(profile)}
 Target Company: ${JSON.stringify(compData)}

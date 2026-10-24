@@ -346,18 +346,18 @@ const CV_TEMPLATES = [
           <h2 class="section-title">Featured Web & Software Projects</h2>
           
           <div class="proj-item">
-            <div class="proj-title">StocksVault — Financial Portfolio & Stock Tracker (Live Production App)</div>
-            <div class="proj-tech">Angular • TypeScript • REST API • Data Visualizations • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
-            <div class="proj-desc">
-              Architected and deployed a responsive financial portfolio manager with reactive Angular services for real-time asset allocations, comparative stock analytics, interactive watchlists, and performance metrics dashboards.
-            </div>
-          </div>
-
-          <div class="proj-item">
             <div class="proj-title">CineLog — Movie & TV Series Tracking PWA (Live Production App)</div>
             <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Progressive Web App for media exploration and review diaries with TMDB API integration, fluid touch navigation, dark-canvas styling, and instant edge CDN rendering on Vercel.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Poland Internship Hunter & Automation Desktop App</div>
+            <div class="proj-tech">TypeScript • React • Tailwind CSS • SQLite • Electron • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-desc">
+              Built an automated desktop CRM & outreach platform tailored for European internships. Implemented 5-factor fit scoring algorithms, dynamic email generation, local SQLite database persistence, and rate-limited direct SMTP transmission.
             </div>
           </div>
 
@@ -370,10 +370,10 @@ const CV_TEMPLATES = [
           </div>
 
           <div class="proj-item">
-            <div class="proj-title">Poland Internship Hunter & Automation Desktop App</div>
-            <div class="proj-tech">TypeScript • React • Tailwind CSS • SQLite • Electron • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-title">StocksVault — Financial Portfolio & Stock Tracker (Live Production App)</div>
+            <div class="proj-tech">Angular • TypeScript • REST API • Data Visualizations • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
-              Built an automated desktop CRM & outreach platform tailored for European internships. Implemented 5-factor fit scoring algorithms, dynamic email generation, local SQLite database persistence, and rate-limited direct SMTP transmission.
+              Architected and deployed a responsive financial portfolio manager with reactive Angular services for real-time asset allocations, comparative stock analytics, interactive watchlists, and performance metrics dashboards.
             </div>
           </div>
         </section>
@@ -549,18 +549,18 @@ const CV_TEMPLATES = [
           <h2 class="section-title">Featured UI/UX & Multimedia Projects</h2>
           
           <div class="proj-item">
-            <div class="proj-title">StocksVault — Financial Dashboard & Asset Comparison UX (Live App)</div>
-            <div class="proj-tech">Angular • Financial Visualizations • High-Density Tables • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
-            <div class="proj-desc">
-              Designed clean data tables and equity comparison views. Focused on typographic hierarchy for financial metrics, intuitive watchlist filters, and responsive layout scaling across mobile and desktop.
-            </div>
-          </div>
-
-          <div class="proj-item">
             <div class="proj-title">CineLog — Mobile PWA & Cinema Discovery UI/UX Architecture</div>
             <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Designed an immersive, tactile cinema tracking application interface. Formatted high-contrast movie poster exploration grids, responsive bottom-sheet navigation, user diary review logging, and custom collection organization.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Poland Internship Hunter — Design System & UI Architecture</div>
+            <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-desc">
+              Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions.
             </div>
           </div>
 
@@ -573,10 +573,10 @@ const CV_TEMPLATES = [
           </div>
 
           <div class="proj-item">
-            <div class="proj-title">Poland Internship Hunter — Design System & UI Architecture</div>
-            <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-title">StocksVault — Financial Dashboard & Asset Comparison UX (Live App)</div>
+            <div class="proj-tech">Angular • Financial Visualizations • High-Density Tables • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
-              Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions.
+              Designed clean data tables and equity comparison views. Focused on typographic hierarchy for financial metrics, intuitive watchlist filters, and responsive layout scaling across mobile and desktop.
             </div>
           </div>
         </section>
@@ -751,18 +751,18 @@ const CV_TEMPLATES = [
           <h2 class="section-title">Featured QA & Software Testing Projects</h2>
           
           <div class="proj-item">
-            <div class="proj-title">StocksVault — Financial Computation & Component Integrity Testing (Live App)</div>
-            <div class="proj-tech">Angular • Data Validation • Boundary Testing • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
-            <div class="proj-desc">
-              Conducted functional verification across stock portfolio allocation formulas, currency conversions, comparison table sorting logic, and asynchronous REST state transitions.
-            </div>
-          </div>
-
-          <div class="proj-item">
             <div class="proj-title">CineLog PWA — Cross-Device Functional & API Testing</div>
             <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Conducted cross-browser and mobile device verification for a movie tracking web application. Tested TMDB REST API response edge-cases, asynchronous media poster caching, network latency resilience, and touch interaction fidelity.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">End-to-End Application Testing Matrix — Poland Internship Hunter</div>
+            <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-desc">
+              Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures.
             </div>
           </div>
 
@@ -775,10 +775,10 @@ const CV_TEMPLATES = [
           </div>
 
           <div class="proj-item">
-            <div class="proj-title">End-to-End Application Testing Matrix — Poland Internship Hunter</div>
-            <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
+            <div class="proj-title">StocksVault — Financial Computation & Component Integrity Testing (Live App)</div>
+            <div class="proj-tech">Angular • Data Validation • Boundary Testing • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
-              Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures.
+              Conducted functional verification across stock portfolio allocation formulas, currency conversions, comparison table sorting logic, and asynchronous REST state transitions.
             </div>
           </div>
         </section>

@@ -207,29 +207,7 @@ const htmlContent = `<!DOCTYPE html>
     <h2 class="section-title">🚀 Live Production Deployments & Software Projects</h2>
 
     <div class="projects-grid">
-      <!-- 1. StocksVault -->
-      <div class="project-card blue">
-        <div>
-          <div class="project-header">
-            <div class="project-title">StocksVault — Financial Portfolio & Stock Tracker</div>
-            <span class="project-badge blue">✓ Live on Netlify</span>
-          </div>
-          <div class="project-tech">Angular • TypeScript • REST API • Data Visualizations • Netlify</div>
-          <div class="project-desc">
-            Production web application for managing equity investments, interactive asset comparisons, custom watchlists, and financial health metrics.
-          </div>
-          <ul class="project-highlights">
-            <li>Reactive Angular services managing live portfolio allocations and metrics.</li>
-            <li>Interactive asset comparison tables, watchlist tracking, and AI copilot.</li>
-            <li>Production CI/CD deployment with instant client-side routing.</li>
-          </ul>
-        </div>
-        <div class="project-link-box">
-          🔗 Live App: <a href="https://stocksvault.netlify.app/portfolio" target="_blank">stocksvault.netlify.app/portfolio</a>
-        </div>
-      </div>
-
-      <!-- 2. CineLog -->
+      <!-- 1. CineLog -->
       <div class="project-card green">
         <div>
           <div class="project-header">
@@ -248,6 +226,28 @@ const htmlContent = `<!DOCTYPE html>
         </div>
         <div class="project-link-box">
           🔗 Live App: <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank">cinelog-phi.vercel.app/?tab=explore</a>
+        </div>
+      </div>
+
+      <!-- 2. Poland Hunter -->
+      <div class="project-card purple">
+        <div>
+          <div class="project-header">
+            <div class="project-title">Poland Internship Hunter — Automation Platform</div>
+            <span class="project-badge purple">Desktop App</span>
+          </div>
+          <div class="project-tech">TypeScript • React • SQLite • Electron • Gemini AI • Nodemailer</div>
+          <div class="project-desc">
+            Desktop CRM automating European curricular internship outreach, fit-scoring, and scheduled background career board queries.
+          </div>
+          <ul class="project-highlights">
+            <li>5-factor explainable algorithm matching candidate skills to Polish firms.</li>
+            <li>Local relational SQLite database with 14-stage Kanban pipeline tracking.</li>
+            <li>Direct Gmail SMTP rate-limited dispatch and RFC 822 .eml export.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 GitHub: <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank">github.com/FabioSilva32/poland-internship-hunter</a>
         </div>
       </div>
 
@@ -273,7 +273,29 @@ const htmlContent = `<!DOCTYPE html>
         </div>
       </div>
 
-      <!-- 4. ACRIALBI -->
+      <!-- 4. StocksVault -->
+      <div class="project-card blue">
+        <div>
+          <div class="project-header">
+            <div class="project-title">StocksVault — Financial Portfolio & Stock Tracker</div>
+            <span class="project-badge blue">✓ Live on Netlify</span>
+          </div>
+          <div class="project-tech">Angular • TypeScript • REST API • Data Visualizations • Netlify</div>
+          <div class="project-desc">
+            Production web application for managing equity investments, interactive asset comparisons, custom watchlists, and financial health metrics.
+          </div>
+          <ul class="project-highlights">
+            <li>Reactive Angular services managing live portfolio allocations and metrics.</li>
+            <li>Interactive asset comparison tables, watchlist tracking, and AI copilot.</li>
+            <li>Production CI/CD deployment with instant client-side routing.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 Live App: <a href="https://stocksvault.netlify.app/portfolio" target="_blank">stocksvault.netlify.app/portfolio</a>
+        </div>
+      </div>
+
+      <!-- 5. ACRIALBI -->
       <div class="project-card amber">
         <div>
           <div class="project-header">
@@ -292,28 +314,6 @@ const htmlContent = `<!DOCTYPE html>
         </div>
         <div class="project-link-box">
           🔗 Live App: <a href="https://acrialbi.netlify.app/#ideias" target="_blank">acrialbi.netlify.app/#ideias</a>
-        </div>
-      </div>
-
-      <!-- 5. Poland Hunter -->
-      <div class="project-card purple">
-        <div>
-          <div class="project-header">
-            <div class="project-title">Poland Internship Hunter — Automation Platform</div>
-            <span class="project-badge purple">Desktop App</span>
-          </div>
-          <div class="project-tech">TypeScript • React • SQLite • Electron • Gemini AI • Nodemailer</div>
-          <div class="project-desc">
-            Desktop CRM automating European curricular internship outreach, fit-scoring, and scheduled background career board queries.
-          </div>
-          <ul class="project-highlights">
-            <li>5-factor explainable algorithm matching candidate skills to Polish firms.</li>
-            <li>Local relational SQLite database with 14-stage Kanban pipeline tracking.</li>
-            <li>Direct Gmail SMTP rate-limited dispatch and RFC 822 .eml export.</li>
-          </ul>
-        </div>
-        <div class="project-link-box">
-          🔗 GitHub: <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank">github.com/FabioSilva32/poland-internship-hunter</a>
         </div>
       </div>
 
@@ -342,7 +342,7 @@ const htmlContent = `<!DOCTYPE html>
 
     <div class="footer">
       <span>Fábio Júnior Fernandes Silva • IPCA Web Multimedia Development</span>
-      <span>Live Apps: StocksVault • CineLog • Retiro Interior • ACRIALBI • Poland Hunter</span>
+      <span>Live Projects: CineLog • Poland Hunter • Retiro Interior • StocksVault • ACRIALBI</span>
       <span>GitHub: github.com/FabioSilva32</span>
     </div>
   </div>
@@ -353,7 +353,7 @@ app.whenReady().then(async () => {
   try {
     console.log('[Portfolio Generator] Initializing updated multi-live deployment portfolio...');
     const localExportDir = path.resolve(__dirname, '../generated-cvs');
-    const docsDir = path.join(app.getPath('userData'), 'documents');
+    const docsDir = path.join(process.env.APPDATA, 'poland-internship-hunter', 'documents');
 
     if (!fs.existsSync(localExportDir)) fs.mkdirSync(localExportDir, { recursive: true });
     if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir, { recursive: true });

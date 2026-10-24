@@ -17,16 +17,18 @@ async function updateProfile() {
 
   const sig = `Kind regards,
 Fábio Júnior Fernandes Silva
-Web Multimedia Development Student | IPCA
+Web Multimedia Development | IPCA
 Email: fabioz262006@gmail.com | Phone: +351 930 534 067
-Portfolio: https://portfolio-candidate.dev
-GitHub: https://github.com/candidate-ipca`;
+Live Projects: https://cinelog-phi.vercel.app/?tab=explore
+GitHub: https://github.com/FabioSilva32`;
 
   db.run(`
     UPDATE user_profile SET
       full_name = 'Fábio Júnior Fernandes Silva',
       email = 'fabioz262006@gmail.com',
       phone = '+351 930 534 067',
+      portfolio_url = 'https://cinelog-phi.vercel.app/?tab=explore',
+      github_url = 'https://github.com/FabioSilva32',
       internship_start_preferred = '2027-02-01',
       internship_end_preferred = '2027-06-30',
       preferred_duration_months = 4,

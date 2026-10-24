@@ -17,7 +17,7 @@ const baseCss = `
   }
   @page {
     size: A4;
-    margin: 10mm 13mm;
+    margin: 8.5mm 12mm;
   }
   .page {
     width: 100%;
@@ -94,10 +94,10 @@ const baseCss = `
 
   /* Left Column Elements */
   .sidebar-section {
-    margin-bottom: 11px;
+    margin-bottom: 9px;
   }
   .summary-text {
-    font-size: 9.8px;
+    font-size: 9.6px;
     color: #334155;
     line-height: 1.45;
     text-align: justify;
@@ -205,12 +205,12 @@ const baseCss = `
   .proj-item {
     background: #f8fafc;
     border-left: 2.5px solid var(--accent);
-    padding: 5px 8px;
-    margin-bottom: 6px;
+    padding: 4px 7px;
+    margin-bottom: 4.5px;
     border-radius: 0 4px 4px 0;
   }
   .proj-title {
-    font-size: 10px;
+    font-size: 9.8px;
     font-weight: 700;
     color: #0f172a;
   }
@@ -255,6 +255,7 @@ const CV_TEMPLATES = [
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
         <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -345,9 +346,17 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog — Movie & TV Series Tracking PWA (Live Production App)</div>
-            <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • Vercel • Live: cinelog-phi.vercel.app</div>
+            <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Architected and deployed a responsive Progressive Web Application for film and TV series discovery, review diaries, and custom collections. Integrated The Movie Database (TMDB) API endpoints, implemented fluid touch navigation, responsive dark-canvas styling, and deployed to production on Vercel.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Retiro Interior & ACRIALBI — Live Deployed Web Platforms</div>
+            <div class="proj-tech">HTML5 • CSS3 • JavaScript • Responsive UX • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-desc">
+              Designed and deployed modern, responsive web experiences on Netlify. Implemented section routing (<code>#conceito</code>, <code>#ideias</code>), mobile-first responsive grids, accessible contrast ratios, and clean typography hierarchies.
             </div>
           </div>
 
@@ -440,6 +449,7 @@ const CV_TEMPLATES = [
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
         <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -530,9 +540,17 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog — Mobile PWA & Cinema Discovery UI/UX Architecture</div>
-            <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • Component Hierarchy • Live: cinelog-phi.vercel.app</div>
+            <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
-              Designed an immersive, tactile cinema tracking application interface. Formatted high-contrast movie poster exploration grids, responsive bottom-sheet navigation, user diary review logging, and custom collection organization built for mobile and desktop viewports.
+              Designed an immersive, tactile cinema tracking application interface. Formatted high-contrast movie poster exploration grids, responsive bottom-sheet navigation, user diary review logging, and custom collection organization.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Retiro Interior & ACRIALBI — Live Deployed Web Platforms</div>
+            <div class="proj-tech">Figma • Responsive UX • Visual Hierarchy • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-desc">
+              Created digital UI experiences featuring concept showcases (<code>#conceito</code>, <code>#ideias</code>), user-centered content layouts, accessible color palettes, and responsive grid systems for diverse display sizes.
             </div>
           </div>
 
@@ -540,7 +558,7 @@ const CV_TEMPLATES = [
             <div class="proj-title">Poland Internship Hunter — Design System & UI Architecture</div>
             <div class="proj-tech">Figma • Design Tokens • Dark Mode UI • Tailwind CSS • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
             <div class="proj-desc">
-              Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions minimizing cognitive load for students.
+              Designed a comprehensive high-density desktop interface system with custom tokenized dark-mode color palettes, accessible typography hierarchies, intuitive pipeline Kanban boards, and modal micro-interactions.
             </div>
           </div>
         </section>
@@ -624,6 +642,7 @@ const CV_TEMPLATES = [
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
         <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -714,9 +733,17 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog PWA — Cross-Device Functional & API Testing</div>
-            <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • Network Fault Tolerance • Live App</div>
+            <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
-              Conducted cross-browser and mobile device verification for a movie tracking web application. Tested TMDB REST API response edge-cases, asynchronous media poster caching, network latency resilience, and touch interaction fidelity across iOS and Android viewports (cinelog-phi.vercel.app).
+              Conducted cross-browser and mobile device verification for a movie tracking web application. Tested TMDB REST API response edge-cases, asynchronous media poster caching, network latency resilience, and touch interaction fidelity.
+            </div>
+          </div>
+
+          <div class="proj-item">
+            <div class="proj-title">Retiro Interior & ACRIALBI — Responsive UI/UX & Web Verification</div>
+            <div class="proj-tech">Cross-Browser Testing • Responsive Viewports • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-desc">
+              Executed cross-platform verification for deployed Netlify web applications. Verified viewport breakpoints, anchor navigation reliability (<code>#conceito</code>, <code>#ideias</code>), DOM element accessibility, and typography scaling.
             </div>
           </div>
 
@@ -724,7 +751,7 @@ const CV_TEMPLATES = [
             <div class="proj-title">End-to-End Application Testing Matrix — Poland Internship Hunter</div>
             <div class="proj-tech">Black-Box Testing • Edge Case Validation • Process Isolation • SQLite • <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32/poland-internship-hunter</a></div>
             <div class="proj-desc">
-              Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures. Isolated and resolved critical data parsing edge cases.
+              Designed and executed manual test suites validating database transaction concurrency, JSON payload integrity, rate-limiting boundaries, and IPC message handling across multi-process Electron architectures.
             </div>
           </div>
         </section>

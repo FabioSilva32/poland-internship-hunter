@@ -2,164 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Fábio Silva - Technical Projects Portfolio & Case Studies</title>
+  <title>Fábio Silva - Deployed Projects Portfolio & Technical Case Studies</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #1e293b;
       background: #ffffff;
-      font-size: 10px;
-      line-height: 1.45;
+      font-size: 9.8px;
+      line-height: 1.4;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
     @page {
       size: A4;
-      margin: 10mm 12mm;
+      margin: 8mm 11mm;
     }
     .page {
       width: 100%;
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
     /* Header */
     .header {
       border-bottom: 2px solid #4338ca;
-      padding-bottom: 8px;
-      margin-bottom: 12px;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
     .name {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: #0f172a;
       letter-spacing: -0.5px;
       text-transform: uppercase;
     }
     .title-sub {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: #4338ca;
       margin-top: 1px;
     }
     .contact-links {
       text-align: right;
-      font-size: 9.5px;
+      font-size: 9px;
       color: #475569;
-      line-height: 1.4;
+      line-height: 1.35;
     }
     .contact-links a {
       color: #4338ca;
       text-decoration: none;
       font-weight: 700;
     }
+    .badge-poland {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 8.5px;
+      margin-top: 2px;
+    }
 
     /* Section */
     .section-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: #0f172a;
       border-bottom: 1.5px solid #e2e8f0;
-      padding-bottom: 3px;
-      margin-bottom: 9px;
-      margin-top: 4px;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      margin-top: 3px;
     }
 
-    /* Project Card */
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 7px;
+    }
+
     .project-card {
       border: 1px solid #e2e8f0;
       border-left: 3.5px solid #4338ca;
-      border-radius: 6px;
-      padding: 9px 12px;
-      margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 7px 9px;
       background: #fafafa;
+      display: flex;
+      flex-col: column;
+      justify-content: space-between;
     }
-    .project-card.green {
-      border-left-color: #059669;
-    }
-    .project-card.purple {
-      border-left-color: #7c3aed;
-    }
-    .project-card.amber {
-      border-left-color: #d97706;
-    }
+    .project-card.green { border-left-color: #059669; }
+    .project-card.purple { border-left-color: #7c3aed; }
+    .project-card.teal { border-left-color: #0d9488; }
+    .project-card.amber { border-left-color: #d97706; }
 
     .project-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .project-title {
-      font-size: 12px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #0f172a;
     }
     .project-badge {
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: 700;
-      padding: 1.5px 6px;
-      border-radius: 4px;
-      background: #e0e7ff;
-      color: #3730a3;
-    }
-    .project-badge.green {
+      padding: 1px 5px;
+      border-radius: 3px;
       background: #d1fae5;
       color: #065f46;
+      white-space: nowrap;
+    }
+    .project-badge.purple {
+      background: #f3e8ff;
+      color: #6b21a8;
     }
 
     .project-tech {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 700;
       color: #4338ca;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
     .project-desc {
-      font-size: 9.5px;
+      font-size: 9px;
       color: #334155;
-      line-height: 1.4;
-      margin-bottom: 5px;
+      line-height: 1.35;
+      margin-bottom: 4px;
     }
     .project-highlights {
       list-style: disc;
-      padding-left: 14px;
-      font-size: 9px;
+      padding-left: 13px;
+      font-size: 8.5px;
       color: #475569;
-      line-height: 1.35;
+      line-height: 1.3;
+      margin-bottom: 4px;
     }
-    .project-highlights li {
-      margin-bottom: 2px;
-    }
+    .project-highlights li { margin-bottom: 1px; }
 
-    .project-url {
-      font-size: 9px;
+    .project-link-box {
+      margin-top: 3px;
+      padding-top: 3px;
+      border-top: 1px dashed #e2e8f0;
+      font-size: 8.5px;
       font-weight: 700;
-      margin-top: 5px;
-      display: inline-block;
+    }
+    .project-link-box a {
       color: #4338ca;
       text-decoration: none;
     }
 
-    /* Grid for secondary projects */
-    .grid-two {
+    /* Experience Grid */
+    .grid-exp {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 9px;
+      gap: 7px;
+      margin-bottom: 6px;
     }
 
     .footer {
-      margin-top: 10px;
+      margin-top: 6px;
       border-top: 1px solid #e2e8f0;
-      padding-top: 6px;
+      padding-top: 4px;
       display: flex;
       justify-content: space-between;
-      font-size: 8.5px;
+      font-size: 8px;
       color: #64748b;
     }
   </style>
@@ -169,102 +188,149 @@
     <header class="header">
       <div>
         <h1 class="name">Fábio Júnior Fernandes Silva</h1>
-        <div class="title-sub">Web Multimedia Development Student • IPCA (Portugal)</div>
+        <div class="title-sub">Web Multimedia Development Undergraduate • IPCA (Portugal)</div>
       </div>
       <div class="contact-links">
         <div>📧 fabioz262006@gmail.com • 📞 +351 930 534 067</div>
         <div>💻 <a href="https://github.com/FabioSilva32" target="_blank">github.com/FabioSilva32</a></div>
-        <div>🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank">cinelog-phi.vercel.app</a></div>
-        <div>✓ Relocating to Poland: Spring 2027 (Feb–Jun)</div>
+        <div><span class="badge-poland">✓ Relocating to Poland: Spring 2027 (Feb–Jun)</span></div>
       </div>
     </header>
 
-    <h2 class="section-title">⭐ Primary Featured Production Applications</h2>
+    <h2 class="section-title">🚀 Live Production Deployments & Software Projects</h2>
 
-    <!-- Project 1: CineLog -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">1. CineLog — Movie & TV Series Tracking Progressive Web App (PWA)</div>
-        <span class="project-badge green">✓ Live in Production</span>
+    <div class="projects-grid">
+      <!-- 1. CineLog -->
+      <div class="project-card green">
+        <div>
+          <div class="project-header">
+            <div class="project-title">CineLog — Film & TV Tracking PWA</div>
+            <span class="project-badge">✓ Live on Vercel</span>
+          </div>
+          <div class="project-tech">React • TypeScript • TMDB REST API • Mobile PWA • Vercel</div>
+          <div class="project-desc">
+            Progressive Web App for movie and series exploration, personal watchlists, and review diaries with touch-first ergonomics.
+          </div>
+          <ul class="project-highlights">
+            <li>Asynchronous REST API query caching & poster image optimization.</li>
+            <li>Dark-canvas aesthetic with fluid bottom-sheet navigation.</li>
+            <li>Production CI/CD deployment with instant cloud edge rendering.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 Live App: <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank">cinelog-phi.vercel.app/?tab=explore</a>
+        </div>
       </div>
-      <div class="project-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile-First PWA • Vercel Deployment</div>
-      <div class="project-desc">
-        A full-featured movie and TV exploration application designed for cinephiles. Features real-time API queries, fluid bottom-sheet mobile navigation, custom diary watchlist logging, and responsive dark-canvas styling.
+
+      <!-- 2. Retiro Interior -->
+      <div class="project-card teal">
+        <div>
+          <div class="project-header">
+            <div class="project-title">Retiro Interior — Concept & Tourism Web Portal</div>
+            <span class="project-badge">✓ Live on Netlify</span>
+          </div>
+          <div class="project-tech">HTML5 • CSS3 • JavaScript • Responsive UX • Netlify</div>
+          <div class="project-desc">
+            Modern, responsive web platform highlighting interior regional tourism, nature retreats, and eco-hospitality experiences.
+          </div>
+          <ul class="project-highlights">
+            <li>Interactive section routing (<code>#conceito</code>, accommodations, activities).</li>
+            <li>Fluid responsive layout optimized across mobile, tablet, and desktop viewports.</li>
+            <li>High visual polish, clean typography hierarchy, and smooth anchor scrolling.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 Live App: <a href="https://retirointerior.netlify.app/#conceito" target="_blank">retirointerior.netlify.app/#conceito</a>
+        </div>
       </div>
-      <ul class="project-highlights">
-        <li><strong>Architecture & API Integration:</strong> Interfaced The Movie Database (TMDB) REST endpoints with asynchronous error handling, media poster caching, and search debouncing.</li>
-        <li><strong>Mobile PWA Fidelity:</strong> Built with mobile-first touch ergonomics, gesture support, responsive typography hierarchies, and offline manifest metadata.</li>
-        <li><strong>Live Deployment:</strong> Configured automated CI/CD deployment pipelines on Vercel with zero downtime.</li>
-      </ul>
-      <a class="project-url" href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank">🔗 Live Demo: https://cinelog-phi.vercel.app/?tab=explore</a>
+
+      <!-- 3. ACRIALBI -->
+      <div class="project-card amber">
+        <div>
+          <div class="project-header">
+            <div class="project-title">ACRIALBI — Creative Digital & Ideation Showcase</div>
+            <span class="project-badge">✓ Live on Netlify</span>
+          </div>
+          <div class="project-tech">Web Multimedia • JavaScript • CSS Grid/Flexbox • Netlify</div>
+          <div class="project-desc">
+            Interactive web presence built to present digital media concepts, community initiatives, and creative ideation projects.
+          </div>
+          <ul class="project-highlights">
+            <li>Component-oriented UI sections with interactive showcase galleries (<code>#ideias</code>).</li>
+            <li>Accessible contrast ratios adhering to modern WCAG web standards.</li>
+            <li>Streamlined asset loading and responsive design execution.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 Live App: <a href="https://acrialbi.netlify.app/#ideias" target="_blank">acrialbi.netlify.app/#ideias</a>
+        </div>
+      </div>
+
+      <!-- 4. Poland Hunter -->
+      <div class="project-card purple">
+        <div>
+          <div class="project-header">
+            <div class="project-title">Poland Internship Hunter — Automation Platform</div>
+            <span class="project-badge purple">Desktop App</span>
+          </div>
+          <div class="project-tech">TypeScript • React • SQLite • Electron • Gemini AI • Nodemailer</div>
+          <div class="project-desc">
+            Full desktop CRM automating European curricular internship outreach, fit-scoring, and scheduled background career board queries.
+          </div>
+          <ul class="project-highlights">
+            <li>5-factor explainable algorithm matching candidate skills to Polish firms.</li>
+            <li>Local relational SQLite database with 14-stage Kanban pipeline tracking.</li>
+            <li>Direct Gmail SMTP rate-limited dispatch and RFC 822 .eml export.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 GitHub: <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank">github.com/FabioSilva32/poland-internship-hunter</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Project 2: Poland Internship Hunter -->
-    <div class="project-card purple">
-      <div class="project-header">
-        <div class="project-title">2. Poland Internship Hunter & Outreach Automation Desktop Application</div>
-        <span class="project-badge">Desktop App & CRM</span>
-      </div>
-      <div class="project-tech">TypeScript • React • Tailwind CSS • SQLite • Electron Desktop Shell • Nodemailer SMTP • Google Gemini API</div>
-      <div class="project-desc">
-        A multi-process Windows desktop CRM engineered to automate European curricular internship discovery, candidate-company fit scoring, personalized email generation, and rate-limited direct SMTP outreach for Polish tech firms and game studios.
-      </div>
-      <ul class="project-highlights">
-        <li><strong>Explainable Fit Scoring Engine (0–100):</strong> Implemented multi-factor heuristic matching comparing student coursework against company tech stacks, locations (Kraków/Warsaw/Gdańsk), and academic dates.</li>
-        <li><strong>Multi-Provider Discovery:</strong> Live query parsers for Greenhouse, Lever, and Ashby careers boards with scheduled background checks and polite rate-limiting intervals.</li>
-        <li><strong>Local Persistence:</strong> Full relational SQLite database architecture with 14-stage Kanban tracking and tamper-evident audit logging.</li>
-      </ul>
-      <a class="project-url" href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank">🔗 Source Code & Releases: https://github.com/FabioSilva32/poland-internship-hunter</a>
-    </div>
+    <h2 class="section-title">💼 Institutional Systems & Database Support Experience</h2>
 
-    <h2 class="section-title">💼 Technical Experience & Institutional Systems Work</h2>
-
-    <div class="grid-two">
-      <!-- Experience 1 -->
+    <div class="grid-exp">
       <div class="project-card green" style="margin-bottom:0;">
         <div class="project-header">
-          <div class="project-title" style="font-size:10.5px;">Hospital Misericórdia de Vila Verde</div>
-          <span style="font-size:8px;color:#64748b;font-weight:600;">May – Jun 2024</span>
+          <div class="project-title">Hospital Misericórdia de Vila Verde</div>
+          <span style="font-size:7.5px;color:#64748b;font-weight:700;">May – Jun 2024</span>
         </div>
         <div class="project-tech" style="color:#059669;">IT Systems & Database Support Intern</div>
-        <ul class="project-highlights">
-          <li>Audited and updated clinical databases ensuring data integrity across hospital departments.</li>
-          <li>Authored technical procedural documentation and standard operating manuals for clinical software.</li>
-          <li>Diagnosed hardware, network, and application troubleshooting tickets with zero error tolerance.</li>
-        </ul>
+        <div class="project-desc" style="margin-bottom:0;">
+          Validated health information system records, ensuring zero data corruption across hospital departments; authored technical procedure documentation; resolved workstation hardware and network tickets.
+        </div>
       </div>
 
-      <!-- Experience 2 -->
       <div class="project-card amber" style="margin-bottom:0;">
         <div class="project-header">
-          <div class="project-title" style="font-size:10.5px;">Câmara Municipal de Vila Verde</div>
-          <span style="font-size:8px;color:#64748b;font-weight:600;">Jun – Jul 2023</span>
+          <div class="project-title">Câmara Municipal de Vila Verde (City Hall)</div>
+          <span style="font-size:7.5px;color:#64748b;font-weight:700;">Jun – Jul 2023</span>
         </div>
-        <div class="project-tech" style="color:#d97706;">Database & Information Architecture Intern</div>
-        <ul class="project-highlights">
-          <li>Audited municipal supplier records and citizen databases, eliminating duplicate entries.</li>
-          <li>Restructured data registries to accelerate record lookup speeds for civil service departments.</li>
-          <li>Assisted in setting up workstation configurations and network peripheral diagnostics.</li>
-        </ul>
+        <div class="project-tech" style="color:#d97706;">Database & Information Systems Intern</div>
+        <div class="project-desc" style="margin-bottom:0;">
+          Audited and cross-referenced municipal supplier and citizen relational datasets, successfully eliminating duplicate entries; configured workstations and eliminated operational software bottlenecks.
+        </div>
       </div>
     </div>
 
-    <div style="margin-top:10px;">
-      <h2 class="section-title">📂 Additional Repositories & Coursework Highlights (IPCA)</h2>
-      <div class="project-card" style="border-left-color:#64748b;margin-bottom:0;">
+    <div style="margin-top:6px;">
+      <h2 class="section-title">🎓 Education & Technical Toolkit (IPCA Portugal)</h2>
+      <div class="project-card" style="border-left-color:#64748b;margin-bottom:0;padding:6px 9px;">
         <div class="project-desc" style="margin-bottom:2px;">
-          <strong>Other Repositories on GitHub:</strong> <code>RetiroInterior</code> (Full-stack web application), <code>StockVault</code> (Inventory and asset management system), <code>ACRIALBI</code> (Multimedia web portal), <code>koenigsegg-site</code> (Interactive automotive design showcase).
+          <strong>BSc in Web Multimedia Development (IPCA):</strong> TypeScript, JavaScript (ES6+), React, Angular, Node.js, SQL Databases (SQLite/PostgreSQL), Figma UI/UX Design Systems, Usability Testing, Git Version Control.
         </div>
-        <div style="font-size:9px;color:#475569;">
-          <strong>Technical Tooling:</strong> Git/GitHub, Figma, VS Code, Linux & Windows Admin, Relational SQL, REST APIs, TypeScript, React.
+        <div style="font-size:8.5px;color:#475569;">
+          <strong>Additional Code Repositories:</strong> <code>StockVault</code> (Asset management), <code>projeto-hotel-2025</code>, <code>koenigsegg-site</code> on <a href="https://github.com/FabioSilva32" target="_blank" style="color:#4338ca;font-weight:700;text-decoration:none;">github.com/FabioSilva32</a>.
         </div>
       </div>
     </div>
 
     <div class="footer">
       <span>Fábio Júnior Fernandes Silva • IPCA Web Multimedia Development</span>
-      <span>Curricular Internship Target: Poland (February 1 – June 30, 2027)</span>
-      <span>Portfolio & Project Brief</span>
+      <span>4 Live Deployments: CineLog • Retiro Interior • ACRIALBI • Poland Hunter</span>
+      <span>Target: Poland (Feb–Jun 2027)</span>
     </div>
   </div>
 </body>

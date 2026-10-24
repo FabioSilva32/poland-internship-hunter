@@ -19,7 +19,10 @@ async function updateProfile() {
 Fábio Júnior Fernandes Silva
 Web Multimedia Development | IPCA
 Email: fabioz262006@gmail.com | Phone: +351 930 534 067
-Live Projects: https://cinelog-phi.vercel.app/?tab=explore
+Live Projects:
+• CineLog: https://cinelog-phi.vercel.app/?tab=explore
+• Retiro Interior: https://retirointerior.netlify.app/#conceito
+• ACRIALBI: https://acrialbi.netlify.app/#ideias
 GitHub: https://github.com/FabioSilva32`;
 
   db.run(`

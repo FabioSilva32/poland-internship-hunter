@@ -87,23 +87,25 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 7px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
     .project-card {
       border: 1px solid #e2e8f0;
       border-left: 3.5px solid #4338ca;
       border-radius: 5px;
-      padding: 7px 9px;
+      padding: 6px 8px;
       background: #fafafa;
       display: flex;
-      flex-col: column;
+      flex-direction: column;
       justify-content: space-between;
     }
+    .project-card.blue { border-left-color: #2563eb; }
     .project-card.green { border-left-color: #059669; }
     .project-card.purple { border-left-color: #7c3aed; }
     .project-card.teal { border-left-color: #0d9488; }
     .project-card.amber { border-left-color: #d97706; }
+    .project-card.slate { border-left-color: #475569; }
 
     .project-header {
       display: flex;
@@ -112,12 +114,12 @@
       margin-bottom: 2px;
     }
     .project-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 800;
       color: #0f172a;
     }
     .project-badge {
-      font-size: 8px;
+      font-size: 7.8px;
       font-weight: 700;
       padding: 1px 5px;
       border-radius: 3px;
@@ -125,30 +127,38 @@
       color: #065f46;
       white-space: nowrap;
     }
+    .project-badge.blue {
+      background: #dbeafe;
+      color: #1e40af;
+    }
     .project-badge.purple {
       background: #f3e8ff;
       color: #6b21a8;
     }
+    .project-badge.amber {
+      background: #fef3c7;
+      color: #92400e;
+    }
 
     .project-tech {
-      font-size: 8.5px;
+      font-size: 8.2px;
       font-weight: 700;
       color: #4338ca;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .project-desc {
-      font-size: 9px;
+      font-size: 8.8px;
       color: #334155;
       line-height: 1.35;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .project-highlights {
       list-style: disc;
-      padding-left: 13px;
-      font-size: 8.5px;
+      padding-left: 12px;
+      font-size: 8.2px;
       color: #475569;
-      line-height: 1.3;
-      margin-bottom: 4px;
+      line-height: 1.28;
+      margin-bottom: 3px;
     }
     .project-highlights li { margin-bottom: 1px; }
 
@@ -156,7 +166,7 @@
       margin-top: 3px;
       padding-top: 3px;
       border-top: 1px dashed #e2e8f0;
-      font-size: 8.5px;
+      font-size: 8.2px;
       font-weight: 700;
     }
     .project-link-box a {
@@ -164,16 +174,8 @@
       text-decoration: none;
     }
 
-    /* Experience Grid */
-    .grid-exp {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
-      margin-bottom: 6px;
-    }
-
     .footer {
-      margin-top: 6px;
+      margin-top: 5px;
       border-top: 1px solid #e2e8f0;
       padding-top: 4px;
       display: flex;
@@ -200,7 +202,29 @@
     <h2 class="section-title">🚀 Live Production Deployments & Software Projects</h2>
 
     <div class="projects-grid">
-      <!-- 1. CineLog -->
+      <!-- 1. StocksVault -->
+      <div class="project-card blue">
+        <div>
+          <div class="project-header">
+            <div class="project-title">StocksVault — Financial Portfolio & Stock Tracker</div>
+            <span class="project-badge blue">✓ Live on Netlify</span>
+          </div>
+          <div class="project-tech">Angular • TypeScript • REST API • Data Visualizations • Netlify</div>
+          <div class="project-desc">
+            Production web application for managing equity investments, interactive asset comparisons, custom watchlists, and financial health metrics.
+          </div>
+          <ul class="project-highlights">
+            <li>Reactive Angular services managing live portfolio allocations and metrics.</li>
+            <li>Interactive asset comparison tables, watchlist tracking, and AI copilot.</li>
+            <li>Production CI/CD deployment with instant client-side routing.</li>
+          </ul>
+        </div>
+        <div class="project-link-box">
+          🔗 Live App: <a href="https://stocksvault.netlify.app/portfolio" target="_blank">stocksvault.netlify.app/portfolio</a>
+        </div>
+      </div>
+
+      <!-- 2. CineLog -->
       <div class="project-card green">
         <div>
           <div class="project-header">
@@ -213,8 +237,8 @@
           </div>
           <ul class="project-highlights">
             <li>Asynchronous REST API query caching & poster image optimization.</li>
-            <li>Dark-canvas aesthetic with fluid bottom-sheet navigation.</li>
-            <li>Production CI/CD deployment with instant cloud edge rendering.</li>
+            <li>Dark-canvas aesthetic with fluid bottom-sheet touch navigation.</li>
+            <li>Edge CDN rendering and PWA installability across mobile viewports.</li>
           </ul>
         </div>
         <div class="project-link-box">
@@ -222,7 +246,7 @@
         </div>
       </div>
 
-      <!-- 2. Retiro Interior -->
+      <!-- 3. Retiro Interior -->
       <div class="project-card teal">
         <div>
           <div class="project-header">
@@ -236,7 +260,7 @@
           <ul class="project-highlights">
             <li>Interactive section routing (<code>#conceito</code>, accommodations, activities).</li>
             <li>Fluid responsive layout optimized across mobile, tablet, and desktop viewports.</li>
-            <li>High visual polish, clean typography hierarchy, and smooth anchor scrolling.</li>
+            <li>Clean typography hierarchy, smooth anchor scrolling, and visual polish.</li>
           </ul>
         </div>
         <div class="project-link-box">
@@ -244,12 +268,12 @@
         </div>
       </div>
 
-      <!-- 3. ACRIALBI -->
+      <!-- 4. ACRIALBI -->
       <div class="project-card amber">
         <div>
           <div class="project-header">
             <div class="project-title">ACRIALBI — Creative Digital & Ideation Showcase</div>
-            <span class="project-badge">✓ Live on Netlify</span>
+            <span class="project-badge amber">✓ Live on Netlify</span>
           </div>
           <div class="project-tech">Web Multimedia • JavaScript • CSS Grid/Flexbox • Netlify</div>
           <div class="project-desc">
@@ -266,7 +290,7 @@
         </div>
       </div>
 
-      <!-- 4. Poland Hunter -->
+      <!-- 5. Poland Hunter -->
       <div class="project-card purple">
         <div>
           <div class="project-header">
@@ -275,7 +299,7 @@
           </div>
           <div class="project-tech">TypeScript • React • SQLite • Electron • Gemini AI • Nodemailer</div>
           <div class="project-desc">
-            Full desktop CRM automating European curricular internship outreach, fit-scoring, and scheduled background career board queries.
+            Desktop CRM automating European curricular internship outreach, fit-scoring, and scheduled background career board queries.
           </div>
           <ul class="project-highlights">
             <li>5-factor explainable algorithm matching candidate skills to Polish firms.</li>
@@ -287,50 +311,34 @@
           🔗 GitHub: <a href="https://github.com/FabioSilva32/poland-internship-hunter" target="_blank">github.com/FabioSilva32/poland-internship-hunter</a>
         </div>
       </div>
-    </div>
 
-    <h2 class="section-title">💼 Institutional Systems & Database Support Experience</h2>
-
-    <div class="grid-exp">
-      <div class="project-card green" style="margin-bottom:0;">
-        <div class="project-header">
-          <div class="project-title">Hospital Misericórdia de Vila Verde</div>
-          <span style="font-size:7.5px;color:#64748b;font-weight:700;">May – Jun 2024</span>
+      <!-- 6. Institutional Systems & Background -->
+      <div class="project-card slate">
+        <div>
+          <div class="project-header">
+            <div class="project-title">Institutional Systems Support & Education</div>
+            <span class="project-badge" style="background:#e2e8f0;color:#334155;">IPCA • Practical Internships</span>
+          </div>
+          <div class="project-tech" style="color:#475569;">Hospital Misericórdia • Câmara de Vila Verde • IPCA</div>
+          <div class="project-desc">
+            Hands-on IT systems, database integrity, and procedural documentation in real-world institutional settings.
+          </div>
+          <ul class="project-highlights">
+            <li>Hospital Misericórdia: verified health records with zero error tolerance.</li>
+            <li>City Hall: audited supplier datasets eliminating duplicate entries.</li>
+            <li>IPCA: Web Multimedia Development (TypeScript, Angular, React, SQL, UX).</li>
+          </ul>
         </div>
-        <div class="project-tech" style="color:#059669;">IT Systems & Database Support Intern</div>
-        <div class="project-desc" style="margin-bottom:0;">
-          Validated health information system records, ensuring zero data corruption across hospital departments; authored technical procedure documentation; resolved workstation hardware and network tickets.
-        </div>
-      </div>
-
-      <div class="project-card amber" style="margin-bottom:0;">
-        <div class="project-header">
-          <div class="project-title">Câmara Municipal de Vila Verde (City Hall)</div>
-          <span style="font-size:7.5px;color:#64748b;font-weight:700;">Jun – Jul 2023</span>
-        </div>
-        <div class="project-tech" style="color:#d97706;">Database & Information Systems Intern</div>
-        <div class="project-desc" style="margin-bottom:0;">
-          Audited and cross-referenced municipal supplier and citizen relational datasets, successfully eliminating duplicate entries; configured workstations and eliminated operational software bottlenecks.
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:6px;">
-      <h2 class="section-title">🎓 Education & Technical Toolkit (IPCA Portugal)</h2>
-      <div class="project-card" style="border-left-color:#64748b;margin-bottom:0;padding:6px 9px;">
-        <div class="project-desc" style="margin-bottom:2px;">
-          <strong>BSc in Web Multimedia Development (IPCA):</strong> TypeScript, JavaScript (ES6+), React, Angular, Node.js, SQL Databases (SQLite/PostgreSQL), Figma UI/UX Design Systems, Usability Testing, Git Version Control.
-        </div>
-        <div style="font-size:8.5px;color:#475569;">
-          <strong>Additional Code Repositories:</strong> <code>StockVault</code> (Asset management), <code>projeto-hotel-2025</code>, <code>koenigsegg-site</code> on <a href="https://github.com/FabioSilva32" target="_blank" style="color:#4338ca;font-weight:700;text-decoration:none;">github.com/FabioSilva32</a>.
+        <div class="project-link-box" style="color:#64748b;">
+          🎓 Target Placement: Poland (Feb 1 – Jun 30, 2027)
         </div>
       </div>
     </div>
 
     <div class="footer">
       <span>Fábio Júnior Fernandes Silva • IPCA Web Multimedia Development</span>
-      <span>4 Live Deployments: CineLog • Retiro Interior • ACRIALBI • Poland Hunter</span>
-      <span>Target: Poland (Feb–Jun 2027)</span>
+      <span>Live Apps: StocksVault • CineLog • Retiro Interior • ACRIALBI • Poland Hunter</span>
+      <span>GitHub: github.com/FabioSilva32</span>
     </div>
   </div>
 </body>

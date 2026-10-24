@@ -20,6 +20,7 @@ Fábio Júnior Fernandes Silva
 Web Multimedia Development | IPCA
 Email: fabioz262006@gmail.com | Phone: +351 930 534 067
 Live Projects:
+• StocksVault: https://stocksvault.netlify.app/portfolio
 • CineLog: https://cinelog-phi.vercel.app/?tab=explore
 • Retiro Interior: https://retirointerior.netlify.app/#conceito
 • ACRIALBI: https://acrialbi.netlify.app/#ideias

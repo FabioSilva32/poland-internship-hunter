@@ -509,14 +509,14 @@ const CV_TEMPLATES = [
             </div>
           </div>
           <div class="skill-group">
-            <div class="skill-group-name">Multimedia & Code</div>
+            <div class="skill-group-name">Multimedia & Visual Design</div>
             <div class="skill-tags">
+              <span class="skill-tag">Photoshop</span>
+              <span class="skill-tag">Illustrator</span>
+              <span class="skill-tag">After Effects</span>
+              <span class="skill-tag">Premiere Pro</span>
               <span class="skill-tag">HTML5 & CSS3</span>
               <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">TypeScript basics</span>
-              <span class="skill-tag">Vector & Raster Assets</span>
-              <span class="skill-tag">Responsive Design</span>
-              <span class="skill-tag">Accessibility (WCAG)</span>
             </div>
           </div>
           <div class="skill-group">

@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   ChevronDown,
   Upload,
+  ExternalLink,
 } from 'lucide-react';
 
 export const EmailGenerator: React.FC = () => {
@@ -468,6 +469,18 @@ export const EmailGenerator: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            {currentCompany?.careers_url && (
+              <a
+                href={currentCompany.careers_url}
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1.5 rounded-lg bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 text-xs font-semibold flex items-center gap-1.5 transition border border-indigo-700/60 shadow-sm"
+                title="Open official company job portal"
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Careers Portal ↗</span>
+              </a>
+            )}
             <button
               onClick={handleCopyToClipboard}
               className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center gap-1.5 transition border border-slate-700"

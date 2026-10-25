@@ -63,7 +63,7 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
         is_speculative_candidate: 1,
         opt_out: 0,
         contacts: [
-          { id: 'ct-bloober', name: 'HR & Internship Office', role: 'HR Manager', email: 'jobs@blooberteam.com', source_type: 'verified_website', is_verified: 1 }
+          { id: 'ct-bloober', name: 'HR & Internship Office', role: 'HR Manager', email: 'biuro@blooberteam.com', source_type: 'verified_website', is_verified: 1 }
         ],
         opportunities: [
           {
@@ -114,7 +114,7 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
         is_speculative_candidate: 1,
         opt_out: 0,
         contacts: [
-          { id: 'ct-brainly', name: 'People Team Kraków', role: 'Talent Partner', email: 'recruitment@brainly.com', source_type: 'verified_website', is_verified: 1 }
+          { id: 'ct-brainly', name: 'People Team Kraków', role: 'Talent Partner', email: 'contact@brainly.com', source_type: 'verified_website', is_verified: 1 }
         ],
         opportunities: [
           {
@@ -165,7 +165,7 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
         is_speculative_candidate: 1,
         opt_out: 0,
         contacts: [
-          { id: 'ct-cdpr', name: 'Talent Acquisition Team', role: 'Early Careers', email: 'careers@cdprojektred.com', source_type: 'verified_website', is_verified: 1 }
+          { id: 'ct-cdpr', name: 'CD PROJEKT RED Recruitment', role: 'Job Offers & Talent Acquisition', email: 'jobs@cdprojektred.com', source_type: 'verified_website', is_verified: 1 }
         ]
       }
     ],

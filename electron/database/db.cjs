@@ -386,13 +386,13 @@ function seedInitialData(db) {
 
     // Seed contacts
     const contactsSeed = [
-      { id: 'ct-cdpr', compId: 'comp-cdpr', name: 'Talent Acquisition Team', role: 'Early Careers & Internships', email: 'careers@cdprojektred.com', type: 'verified_website', url: 'https://www.cdprojektred.com/en/careers' },
-      { id: 'ct-11bit', compId: 'comp-11bit', name: 'Recruitment Desk', role: 'Talent Acquisition', email: 'jobs@11bitstudios.com', type: 'verified_website', url: 'https://11bitstudios.com/jobs/' },
-      { id: 'ct-bloober', compId: 'comp-bloober', name: 'HR & Internship Office', role: 'HR Manager', email: 'jobs@blooberteam.com', type: 'verified_website', url: 'https://www.blooberteam.com/careers' },
-      { id: 'ct-allegro', compId: 'comp-allegro', name: 'Campus Recruiting', role: 'Early Careers Lead', email: 'talent@allegro.pl', type: 'verified_website', url: 'https://allegro.pl/praca' },
-      { id: 'ct-brainly', compId: 'comp-brainly', name: 'People Team Kraków', role: 'Talent Partner', email: 'recruitment@brainly.com', type: 'verified_website', url: 'https://careers.brainly.com' },
-      { id: 'ct-netguru', compId: 'comp-netguru', name: 'Talent Team', role: 'Internship Coordinator', email: 'jobs@netguru.com', type: 'verified_website', url: 'https://www.netguru.com/career' },
-      { id: 'ct-fwh', compId: 'comp-flyingwildhog', name: 'Kraków Studio HR', role: 'HR Specialist', email: 'recruitment@flyingwildhog.com', type: 'verified_website', url: 'https://flyingwildhog.com/careers/' }
+      { id: 'ct-cdpr', compId: 'comp-cdpr', name: 'CD PROJEKT RED Recruitment', role: 'Job Offers & Talent Acquisition', email: 'jobs@cdprojektred.com', type: 'verified_website', url: 'https://www.cdprojektred.com/en/careers' },
+      { id: 'ct-11bit', compId: 'comp-11bit', name: '11 bit studios Recruitment', role: 'Talent Acquisition Desk', email: 'jobs@11bitstudios.com', type: 'verified_website', url: 'https://11bitstudios.com/jobs/' },
+      { id: 'ct-bloober', compId: 'comp-bloober', name: 'Bloober Team HR & Office', role: 'Studio Office & Recruitment', email: 'biuro@blooberteam.com', type: 'verified_website', url: 'https://www.blooberteam.com/careers' },
+      { id: 'ct-allegro', compId: 'comp-allegro', name: 'Campus Recruiting', role: 'Early Careers Lead', email: 'praca@allegro.pl', type: 'verified_website', url: 'https://allegro.pl/praca' },
+      { id: 'ct-brainly', compId: 'comp-brainly', name: 'People Team Kraków', role: 'Talent Partner', email: 'contact@brainly.com', type: 'verified_website', url: 'https://careers.brainly.com' },
+      { id: 'ct-netguru', compId: 'comp-netguru', name: 'Talent Team', role: 'Internship Coordinator', email: 'hello@netguru.com', type: 'verified_website', url: 'https://www.netguru.com/career' },
+      { id: 'ct-fwh', compId: 'comp-flyingwildhog', name: 'Kraków Studio HR', role: 'HR Specialist', email: 'contact@flyingwildhog.com', type: 'verified_website', url: 'https://flyingwildhog.com/careers/' }
     ];
 
     const insertContact = db.prepare(`

@@ -141,13 +141,43 @@ async function sendEmail({
     throw new Error('This email has already been sent to avoid duplicate outreach.');
   }
 
-  // 3. Verify attachments if any
-  let attachedDoc = null;
-  if (draft.cv_document_id) {
-    attachedDoc = db.prepare('SELECT * FROM documents WHERE id = ?').get(draft.cv_document_id);
-    if (attachedDoc && !fs.existsSync(attachedDoc.file_path)) {
-      throw new Error(`Attached CV file was not found on disk at: ${attachedDoc.file_path}`);
+  // 3. Verify attachments (Selected CV + Always-Attached Portfolio Showcase)
+  const attachedDocs = [];
+  const attachedDocIds = new Set();
+
+  const addDoc = (docId) => {
+    if (!docId || attachedDocIds.has(docId)) return;
+    const doc = db.prepare('SELECT * FROM documents WHERE id = ?').get(docId);
+    if (doc) {
+      if (!fs.existsSync(doc.file_path)) {
+        console.warn(`[emailService] Document file not found on disk at: ${doc.file_path}`);
+      } else {
+        attachedDocs.push(doc);
+        attachedDocIds.add(doc.id);
+      }
     }
+  };
+
+  // Add primary CV document(s)
+  if (draft.cv_document_id) {
+    if (draft.cv_document_id.includes(',')) {
+      draft.cv_document_id.split(',').map(s => s.trim()).forEach(addDoc);
+    } else {
+      try {
+        const parsed = JSON.parse(draft.cv_document_id);
+        if (Array.isArray(parsed)) parsed.forEach(addDoc);
+        else addDoc(draft.cv_document_id);
+      } catch {
+        addDoc(draft.cv_document_id);
+      }
+    }
+  }
+
+  // Always attach Portfolio Showcase PDF if available
+  const portfolioDoc = db.prepare("SELECT * FROM documents WHERE id = 'doc-portfolio-showcase' OR category = 'portfolio' LIMIT 1").get();
+  if (portfolioDoc && !attachedDocIds.has(portfolioDoc.id) && fs.existsSync(portfolioDoc.file_path)) {
+    attachedDocs.push(portfolioDoc);
+    attachedDocIds.add(portfolioDoc.id);
   }
 
   // 4. Check daily send limit
@@ -180,17 +210,16 @@ async function sendEmail({
       text: draft.body_text
     };
 
-    if (attachedDoc && fs.existsSync(attachedDoc.file_path)) {
-      const resolvedFilename = attachedDoc.file_name 
-        || path.basename(attachedDoc.file_path) 
-        || (attachedDoc.title && attachedDoc.title.endsWith('.pdf') ? attachedDoc.title : `${attachedDoc.title || 'Curriculum_Vitae'}.pdf`);
-
-      mailOptions.attachments = [
-        {
+    if (attachedDocs.length > 0) {
+      mailOptions.attachments = attachedDocs.map(doc => {
+        const resolvedFilename = doc.file_name 
+          || path.basename(doc.file_path) 
+          || (doc.title && doc.title.endsWith('.pdf') ? doc.title : `${doc.title || 'Curriculum_Vitae'}.pdf`);
+        return {
           filename: resolvedFilename,
-          path: attachedDoc.file_path
-        }
-      ];
+          path: doc.file_path
+        };
+      });
     }
 
     await transporter.sendMail(mailOptions);

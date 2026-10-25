@@ -176,7 +176,8 @@ export interface Skill {
 export interface Document {
   id: string;
   title: string;
-  category: 'general' | 'fullstack_web' | 'game_qa' | 'ui_ux';
+  category: 'general' | 'fullstack_web' | 'game_qa' | 'ui_ux' | 'portfolio' | string;
+  file_name?: string;
   file_path: string;
   file_size: number;
   mime_type: string;

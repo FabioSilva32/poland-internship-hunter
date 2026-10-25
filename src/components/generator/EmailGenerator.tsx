@@ -63,7 +63,12 @@ export const EmailGenerator: React.FC = () => {
     if (window.desktopAPI?.getDocuments) {
       window.desktopAPI.getDocuments().then((docs: Document[]) => {
         setDocuments(docs);
-        if (docs.length > 0) setSelectedCvDocId(docs[0].id);
+        const tailoredCvs = docs.filter(d => d.id !== 'doc-portfolio-showcase' && d.category !== 'portfolio');
+        if (tailoredCvs.length > 0) {
+          setSelectedCvDocId(tailoredCvs[0].id);
+        } else if (docs.length > 0) {
+          setSelectedCvDocId(docs[0].id);
+        }
       });
     }
   }, []);
@@ -354,11 +359,11 @@ export const EmailGenerator: React.FC = () => {
         </div>
 
         {/* CV Version Selector with 1-Click Upload */}
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
               <Paperclip className="w-3.5 h-3.5 text-indigo-400" />
-              Attach CV Version:
+              Tailored CV Attachment:
             </label>
             <button
               onClick={handleQuickUploadCv}
@@ -374,8 +379,8 @@ export const EmailGenerator: React.FC = () => {
             onChange={(e) => setSelectedCvDocId(e.target.value)}
             className="w-full px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-indigo-500 cursor-pointer"
           >
-            <option value="">No attachment (Include links only)</option>
-            {documents.map((doc) => (
+            <option value="">No Tailored CV (Portfolio Showcase Only)</option>
+            {documents.filter(d => d.id !== 'doc-portfolio-showcase' && d.category !== 'portfolio').map((doc) => (
               <option key={doc.id} value={doc.id}>
                 📄 {doc.title} ({(doc.file_size / 1024).toFixed(0)} KB)
               </option>
@@ -384,6 +389,24 @@ export const EmailGenerator: React.FC = () => {
               <option value="" disabled>No CV uploaded yet — click "+ Upload PDF" above</option>
             )}
           </select>
+
+          {/* Portfolio Always Attached Callout */}
+          <div className="p-2.5 rounded-lg bg-emerald-950/20 border border-emerald-500/30 flex items-center justify-between text-[11px]">
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400 text-sm">🎨</span>
+              <div>
+                <div className="text-emerald-200 font-semibold">
+                  Portfolio Showcase PDF
+                </div>
+                <div className="text-[10px] text-emerald-400/80">
+                  Always attached to every outreach email
+                </div>
+              </div>
+            </div>
+            <span className="text-[10px] bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+              ✓ Attached
+            </span>
+          </div>
         </div>
 
         {/* Custom Instructions */}
@@ -474,6 +497,27 @@ export const EmailGenerator: React.FC = () => {
               onChange={(e) => setSubject(e.target.value)}
               className="flex-1 px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white font-semibold focus:outline-none focus:border-indigo-500"
             />
+          </div>
+
+          {/* Active Attachments Preview */}
+          <div className="flex items-center gap-3 text-xs pt-2 border-t border-slate-800/80">
+            <span className="w-16 font-semibold text-slate-400 flex items-center gap-1">
+              <Paperclip className="w-3 h-3 text-slate-400" />
+              Files:
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {documents.find(d => d.id === selectedCvDocId) && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-medium text-[11px]">
+                  <FileText className="w-3 h-3 text-indigo-400" />
+                  {documents.find(d => d.id === selectedCvDocId)?.title}
+                </span>
+              )}
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-medium text-[11px]">
+                <span>🎨</span>
+                Portfolio Showcase PDF
+                <span className="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">Always attached</span>
+              </span>
+            </div>
           </div>
         </div>
 

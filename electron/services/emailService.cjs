@@ -144,7 +144,7 @@ async function sendEmail({
   // 3. Verify attachments if any
   let attachedDoc = null;
   if (draft.cv_document_id) {
-    attachedDoc = db.prepare('SELECT file_path, file_name FROM documents WHERE id = ?').get(draft.cv_document_id);
+    attachedDoc = db.prepare('SELECT * FROM documents WHERE id = ?').get(draft.cv_document_id);
     if (attachedDoc && !fs.existsSync(attachedDoc.file_path)) {
       throw new Error(`Attached CV file was not found on disk at: ${attachedDoc.file_path}`);
     }
@@ -181,9 +181,13 @@ async function sendEmail({
     };
 
     if (attachedDoc && fs.existsSync(attachedDoc.file_path)) {
+      const resolvedFilename = attachedDoc.file_name 
+        || path.basename(attachedDoc.file_path) 
+        || (attachedDoc.title && attachedDoc.title.endsWith('.pdf') ? attachedDoc.title : `${attachedDoc.title || 'Curriculum_Vitae'}.pdf`);
+
       mailOptions.attachments = [
         {
-          filename: attachedDoc.file_name,
+          filename: resolvedFilename,
           path: attachedDoc.file_path
         }
       ];

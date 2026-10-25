@@ -270,7 +270,7 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
         recipient_email: 'recruitment@brainly.com',
         recipient_name: 'Brainly Recruitment Desk',
         subject: 'University Internship Inquiry (Spring 2027) – Web Multimedia Development – Candidato Universitário IPCA',
-        body_text: 'Dear Brainly Recruitment Desk,\n\nI am an undergraduate student studying Desenvolvimento Web Multimédia at IPCA in Portugal, seeking a 4-month university curricular internship in Kraków from March through June/July 2027.\n\nMy academic training is centered on modern web technologies (TypeScript, React, Node.js) and UI/UX design in Figma.\n\nThank you for your time.',
+        body_text: 'Dear Brainly Recruitment Desk,\n\nI am an undergraduate student studying Desenvolvimento Web Multimédia at IPCA in Portugal, seeking a 4-month university curricular internship in Kraków from February through June 2027.\n\nMy academic training is centered on modern web technologies (TypeScript, React, Node.js) and UI/UX design in Figma.\n\nThank you for your time.',
         template_type: 'speculative_inquiry',
         variant: 'concise',
         status: 'draft',
@@ -354,7 +354,7 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
     },
     generateEmail: async (params: any) => ({
       subject: `University Internship Inquiry (Spring 2027) – Web Multimedia Development – ${mockStorage.profile.full_name}`,
-      body: `Dear ${params.company?.recipientName || 'Hiring Team'},\n\nI am an undergraduate student studying Desenvolvimento Web Multimédia at IPCA in Portugal.\n\nI am seeking a 4-month curricular university internship in Poland from March through June/July 2027.\n\nI look forward to discussing any potential placement.\n\n${mockStorage.profile.signature}`,
+      body: `Dear ${params.company?.recipientName || 'Hiring Team'},\n\nI am an undergraduate student studying Desenvolvimento Web Multimédia at IPCA in Portugal.\n\nI am seeking a 4-month curricular university internship in Poland from February through June 2027.\n\nI look forward to discussing any potential placement.\n\n${mockStorage.profile.signature}`,
       provider: 'builtin-template'
     }),
     sendEmail: async (draftId: string) => ({ success: true, message: 'Email marked as sent. Next follow-up scheduled.' }),

@@ -1,6 +1,6 @@
 # Poland Internship Hunter & Email Automation (Windows Desktop App)
 
-A specialized Windows desktop application built with **React**, **TypeScript**, **Tailwind CSS**, and **SQLite (Node 22/24 built-in engine)** wrapped in a native **Electron desktop shell**, designed specifically for a university student studying **Desenvolvimento Web Multimédia at IPCA (Portugal)** seeking a 4-month curricular internship in Poland for **Spring 2027 (March to June/July 2027)**.
+A specialized Windows desktop application built with **React**, **TypeScript**, **Tailwind CSS**, and **SQLite (Node 22/24 built-in engine)** wrapped in a native **Electron desktop shell**, designed specifically for a university student studying **Desenvolvimento Web Multimédia at IPCA (Portugal)** seeking a 4-month curricular internship in Poland for **Spring 2027 (February 1 to June 30, 2027)**.
 
 ---
 
@@ -23,7 +23,7 @@ A specialized Windows desktop application built with **React**, **TypeScript**, 
   1. *Academic Degree Relevance* (IPCA Web Multimedia curriculum: TypeScript, React, UI/UX, Multimedia)
   2. *Industry & Role Alignment* (Software dev, Frontend, UI/UX, Game QA & testing)
   3. *Location Match* (Kraków priority score: 100%, Warsaw: 95%, Gdańsk: 90%)
-  4. *2027 Dates & Duration* (March–June 2027 window)
+  4. *2027 Dates & Duration* (February–June 2027 window)
   5. *Language Compatibility* (English-friendly work environment)
 - **Verified Contacts**: Recruiter contacts labeled by source (`verified_website`, `public_source`, `form_only`).
 - **Priority Management**: Toggle companies between *High*, *Medium*, and *Low*.

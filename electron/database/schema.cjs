@@ -109,6 +109,7 @@ CREATE TABLE IF NOT EXISTS documents (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   category TEXT NOT NULL, -- general, fullstack_web, game_qa, ui_ux
+  file_name TEXT,
   file_path TEXT NOT NULL,
   file_size INTEGER,
   mime_type TEXT DEFAULT 'application/pdf',

@@ -17,7 +17,7 @@ const TEMPLATES = {
 
 I am an undergraduate student studying Desenvolvimento Web Multimédia (Web Multimedia Development) at IPCA (Polytechnic Institute of Cávado and Ave) in Portugal. 
 
-As part of my degree program, I will be completing a 4-month university curricular internship in Poland, ideally from March through June/July 2027.
+As part of my degree program, I will be completing a 4-month university curricular internship in Poland, ideally from February through June 2027.
 
 I have been following ${c.name}'s work${c.products ? ` on ${c.products}` : ''} and greatly admire your focus on quality engineering and digital innovation. My academic and project background focuses on modern web engineering (${p.skillsList || 'TypeScript, React, Node.js'}), UI/UX design systems in Figma, and interactive multimedia.
 
@@ -31,14 +31,14 @@ Thank you for your time and consideration.
 ${p.signature || `Kind regards,\n${p.full_name}\n${p.university}`}`
     }),
     detailed: (p, c) => ({
-      subject: `University Internship Inquiry – Spring 2027 (Mar–Jul) – Web Multimedia Engineering – ${p.full_name}`,
+      subject: `University Internship Inquiry – Spring 2027 (Feb–Jun) – Web Multimedia Engineering – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Talent & Engineering Team'},
 
 I hope this email finds you well.
 
 My name is ${p.full_name}, and I am currently in my penultimate year studying Desenvolvimento Web Multimédia (Web Multimedia Development) at IPCA (Instituto Politécnico do Cávado e do Ave) in Portugal.
 
-I am planning my final-year mandatory university internship and am specifically seeking an on-site or hybrid opportunity in Poland (especially ${c.city || 'Kraków/Warsaw'}) starting in March 2027 for a duration of approximately 4 months (March through June/July 2027).
+I am planning my final-year mandatory university internship and am specifically seeking an on-site or hybrid opportunity in Poland (especially ${c.city || 'Kraków/Warsaw'}) starting in February 2027 for a duration of approximately 4 to 5 months (February through June 2027).
 
 Why I am contacting ${c.name}:
 ${c.name} has built a standout reputation${c.products ? ` through projects like ${c.products}` : ' in the Polish technology sector'}. My degree specifically bridges the gap between software engineering, modern frontend architecture, and user experience design. Over the course of my studies, I have gained hands-on experience in:
@@ -66,7 +66,7 @@ ${p.signature || `Sincerely,\n${p.full_name}\n${p.degree} Student\n${p.universit
 
 I am writing to express my enthusiastic interest in the ${c.jobTitle || 'Internship'} position at ${c.name}${c.city ? ` in ${c.city}` : ''}.
 
-I am an undergraduate student in Desenvolvimento Web Multimédia at IPCA in Portugal, and I am available for a 4-month curricular internship starting in March 2027 (through June/July 2027).
+I am an undergraduate student in Desenvolvimento Web Multimédia at IPCA in Portugal, and I am available for a 4-month curricular internship starting in February 2027 (through June 2027).
 
 My background directly matches the technical skills required for this role, specifically ${c.requiredTech || p.skillsList || 'TypeScript, React, and UI/UX design'}. Through both coursework and practical project work, I am accustomed to writing clean, maintainable code, adhering to design specifications, and collaborating via Git.
 
@@ -83,7 +83,7 @@ ${p.signature || `Best regards,\n${p.full_name}`}`
 
 I am writing to apply for the ${c.jobTitle || 'Internship'} position at ${c.name}, which I discovered via your careers page.
 
-As a student completing my degree in Desenvolvimento Web Multimédia at IPCA (Instituto Politécnico do Cávado e do Ave, Portugal), I am seeking a full-time university placement in Poland from March 2027 to June/July 2027 (4 months).
+As a student completing my degree in Desenvolvimento Web Multimédia at IPCA (Instituto Politécnico do Cávado e do Ave, Portugal), I am seeking a full-time university placement in Poland from February 2027 to June 2027 (4-5 months).
 
 The requirements outlined for the position strongly match my profile:
 - Practical experience with ${c.requiredTech || p.skillsList || 'modern web technologies, frontend frameworks, and responsive design'}
@@ -108,7 +108,7 @@ ${p.signature || `Warm regards,\n${p.full_name}\n${p.portfolio_url}`}`
       subject: `Game QA / Testing University Internship (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' QA Team'},
 
-I am an undergraduate student in Web Multimedia Development at IPCA (Portugal), seeking a 4-month university internship in Game Quality Assurance and Functionality Testing in Poland from March through June/July 2027.
+I am an undergraduate student in Web Multimedia Development at IPCA (Portugal), seeking a 4-month university internship in Game Quality Assurance and Functionality Testing in Poland from February through June 2027.
 
 With an educational background combining programming concepts, multimedia pipelines, and interactive systems, I have a deep appreciation for the technical discipline required in game testing: methodical bug isolation, clear Jira-style defect reproduction, edge-case analysis, and build verification.
 
@@ -124,7 +124,7 @@ ${p.signature || `Best regards,\n${p.full_name}`}`
 
 I hope this message finds you well.
 
-My name is ${p.full_name}, and I am completing my degree in Web Multimedia Development at IPCA in Portugal. I am currently seeking a 4-month university curricular internship in Poland (especially Kraków or Warsaw) for the Spring 2027 semester (March to June/July 2027).
+My name is ${p.full_name}, and I am completing my degree in Web Multimedia Development at IPCA in Portugal. I am currently seeking a 4-month university curricular internship in Poland (especially Kraków or Warsaw) for the Spring 2027 semester (February to June 2027).
 
 I am writing to ${c.name} specifically because of your high standards of production and gameplay experience${c.products ? ` in titles such as ${c.products}` : ''}.
 
@@ -149,7 +149,7 @@ ${p.signature || `Sincerely,\n${p.full_name}\n${p.university}`}`
       subject: `Game Development Internship Inquiry (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Engineering Team'},
 
-I am an undergraduate student studying Web Multimedia Development at IPCA in Portugal, writing to inquire about junior game development or technical internship opportunities at ${c.name} for Spring 2027 (March to June/July 2027, 4 months).
+I am an undergraduate student studying Web Multimedia Development at IPCA in Portugal, writing to inquire about junior game development or technical internship opportunities at ${c.name} for Spring 2027 (February to June 2027, 4 months).
 
 My coursework and personal work incorporate C#, Unity 3D, gameplay scripting, shader basics, and interactive UI logic. I am eager to contribute to ${c.name}'s development pipeline and learn from your team.
 
@@ -163,7 +163,7 @@ ${p.signature || `Best regards,\n${p.full_name}`}`
       subject: `Game Programming & Interactive Tech Internship (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Development Team'},
 
-I am writing to inquire about university internship opportunities in game programming, gameplay scripting, or technical interactive systems at ${c.name} for the Spring 2027 semester (March–June/July 2027).
+I am writing to inquire about university internship opportunities in game programming, gameplay scripting, or technical interactive systems at ${c.name} for the Spring 2027 semester (February–June 2027).
 
 I am currently studying Web Multimedia Development at IPCA (Instituto Politécnico do Cávado e do Ave) in Portugal. The program combines software engineering, object-oriented programming (C#), interactive media pipelines, and computer graphics fundamentals.
 
@@ -188,7 +188,7 @@ ${p.signature || `Sincerely,\n${p.full_name}`}`
       subject: `Frontend / Web Engineering Internship (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Frontend Team'},
 
-I am an undergraduate student in Web Multimedia Development at IPCA (Portugal), seeking a 4-month frontend development internship in Poland from March through June/July 2027.
+I am an undergraduate student in Web Multimedia Development at IPCA (Portugal), seeking a 4-month frontend development internship in Poland from February through June 2027.
 
 My core technical focus is modern TypeScript, React, responsive CSS/Tailwind, and accessible component architectures. I would love to bring my enthusiasm and frontend skills to ${c.name}.
 
@@ -199,12 +199,12 @@ Thank you for your consideration.
 ${p.signature || `Best regards,\n${p.full_name}`}`
     }),
     detailed: (p, c) => ({
-      subject: `Frontend Development University Internship (Mar–Jul 2027) – ${p.full_name}`,
+      subject: `Frontend Development University Internship (Feb–Jun 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Engineering Team'},
 
 I hope you are having a productive week.
 
-I am an undergraduate student in my final year of Web Multimedia Development at IPCA in Portugal, writing to explore internship or trainee opportunities in frontend development at ${c.name} in Poland starting March 2027 for a duration of 4 months.
+I am an undergraduate student in my final year of Web Multimedia Development at IPCA in Portugal, writing to explore internship or trainee opportunities in frontend development at ${c.name} in Poland starting February 2027 (February to June 2027).
 
 My technical profile is centered on modern web applications:
 - Strong foundations in TypeScript, JavaScript (ESNext), and React
@@ -230,7 +230,7 @@ ${p.signature || `Kind regards,\n${p.full_name}\n${p.university}`}`
       subject: `Software Engineering University Internship (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Engineering Lead'},
 
-I am a computer science and multimedia student at IPCA in Portugal, seeking a 4-month software engineering university placement in Poland from March to June/July 2027.
+I am a computer science and multimedia student at IPCA in Portugal, seeking a 4-month software engineering university placement in Poland from February to June 2027.
 
 I possess solid foundations in object-oriented programming, data structures, TypeScript/JavaScript, and backend REST APIs with Node.js and SQL databases.
 
@@ -242,7 +242,7 @@ ${p.signature || `Best regards,\n${p.full_name}`}`
       subject: `Software Development Internship Application (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Recruitment & Technology Team'},
 
-I am writing to inquire about software engineering internship positions at ${c.name} for the Spring 2027 semester (March 2027 to June/July 2027).
+I am writing to inquire about software engineering internship positions at ${c.name} for the Spring 2027 semester (February 2027 to June 2027).
 
 I am currently studying Web Multimedia Development at IPCA in Portugal. My academic training emphasizes software engineering fundamentals, database systems (SQL), algorithms, and full-stack web architectures.
 
@@ -271,7 +271,7 @@ ${p.signature || `Sincerely,\n${p.full_name}`}`
 
 I am an undergraduate student in Web Multimedia Development at IPCA (Portugal), passionate about UI/UX design, interactive prototyping in Figma, and design systems.
 
-I am seeking a 4-month university internship in Poland from March through June/July 2027. My dual training in design and frontend engineering allows me to design user-centered experiences that are technically feasible.
+I am seeking a 4-month university internship in Poland from February through June 2027. My dual training in design and frontend engineering allows me to design user-centered experiences that are technically feasible.
 
 My CV and design portfolio (${p.portfolio_url}) are available for your review.
 
@@ -285,7 +285,7 @@ ${p.signature || `Kind regards,\n${p.full_name}`}`
 
 I hope this email finds you well.
 
-My name is ${p.full_name}, and I am studying Web Multimedia Development at IPCA in Portugal. I am reaching out to inquire about UI/UX design, product design, or web design internship placements at ${c.name} in Poland starting in March 2027 (4 months duration).
+My name is ${p.full_name}, and I am studying Web Multimedia Development at IPCA in Portugal. I am reaching out to inquire about UI/UX design, product design, or web design internship placements at ${c.name} in Poland starting in February 2027 (February to June 2027).
 
 What makes my profile unique is the integration of UX design principles with real-world frontend implementation skills:
 - User-centric design in Figma: Wireframing, interactive prototyping, user flows, and component design systems
@@ -307,7 +307,7 @@ ${p.signature || `Warm regards,\n${p.full_name}`}`
       subject: `Following up: University Internship Inquiry (Spring 2027) – ${p.full_name}`,
       body: `Dear ${c.recipientName || c.name + ' Hiring Team'},
 
-I am writing to briefly follow up on my previous inquiry regarding potential university internship opportunities for Spring 2027 (March to June/July).
+I am writing to briefly follow up on my previous inquiry regarding potential university internship opportunities for Spring 2027 (February to June).
 
 I remain very interested in the work ${c.name} is doing and would appreciate knowing if your team is currently reviewing student applications for this period.
 
@@ -321,7 +321,7 @@ ${p.signature || `Kind regards,\n${p.full_name}`}`
 
 I hope you are having a wonderful week.
 
-I am writing to politely follow up on the university internship inquiry I submitted last week regarding a placement from March through June/July 2027 in Poland.
+I am writing to politely follow up on the university internship inquiry I submitted last week regarding a placement from February through June 2027 in Poland.
 
 I understand this is a busy period for your team, but I wanted to reaffirm my enthusiasm for ${c.name} and reiterate my availability for a brief conversation or technical assessment.
 
@@ -343,7 +343,7 @@ ${p.signature || `Sincerely,\n${p.full_name}`}`
 Thank you very much for your response and for considering my application.
 
 As requested, please find the additional information below:
-• Availability dates: March 1, 2027 – June 30, 2027 (4 months / full-time)
+• Availability dates: February 1, 2027 – June 30, 2027 (4 months / full-time)
 • University protocol: Tripartite Erasmus+ / Curricular Internship Agreement provided by IPCA
 • Working language: Fluent in English (C1)
 
@@ -358,7 +358,7 @@ ${p.signature || `Best regards,\n${p.full_name}`}`
 Thank you for getting back to me so promptly and for the opportunity to provide further details regarding my internship application.
 
 Here is the requested information regarding my university curricular placement:
-1. Exact Internship Window: March 1, 2027 to June 30, 2027 (approximately 17 weeks, meeting my degree's 4-month requirement).
+1. Exact Internship Window: February 1, 2027 to June 30, 2027 (approximately 17 weeks, meeting my degree's 4-month requirement).
 2. Institutional Agreement: My university, IPCA (Instituto Politécnico do Cávado e do Ave, Portugal), will provide an official curricular internship protocol, including standard academic evaluation sheets and university liability insurance.
 3. Relevant Technical Projects: In addition to my attached CV, you can review live project demonstrations at ${p.portfolio_url} and code repositories at ${p.github_url}.
 
@@ -411,7 +411,7 @@ function translateToPortuguese(templateKey, conciseOrDetailed, profile, company)
 
 Chamo-me ${profile.full_name} e sou estudante da Licenciatura em Desenvolvimento Web Multimédia no IPCA (Instituto Politécnico do Cávado e do Ave) em Portugal.
 
-No âmbito da conclusão do meu curso universitário, realizarei um estágio curricular com a duração de 4 meses, com início previsto para março de 2027 até junho/julho de 2027.
+No âmbito da conclusão do meu curso universitário, realizarei um estágio curricular com a duração de 4 meses, com início previsto para fevereiro de 2027 até junho de 2027.
 
 Escrevo-lhe para manifestar o meu profundo interesse na ${company.name} e consultar a vossa disponibilidade para acolher um estagiário curricular durante este período. A minha formação conjuga engenharia web (${profile.skillsList || 'TypeScript, React, Node.js'}), design de interfaces e sistemas multimédia.
 

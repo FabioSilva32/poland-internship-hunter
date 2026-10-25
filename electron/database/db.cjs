@@ -104,6 +104,23 @@ async function initializeDatabase() {
   // Execute schema definitions
   dbInstance.exec(SCHEMA_SQL);
 
+  // Automatic schema migrations for documents table
+  try {
+    const docInfo = dbInstance.prepare("PRAGMA table_info(documents)").all();
+    const hasFileName = docInfo && docInfo.some(c => c.name === 'file_name');
+    if (!hasFileName) {
+      dbInstance.exec("ALTER TABLE documents ADD COLUMN file_name TEXT;");
+      console.log('[DB Migration] Added file_name column to documents table');
+    }
+    const unpopulated = dbInstance.prepare("SELECT id, file_path, title FROM documents WHERE file_name IS NULL OR file_name = ''").all();
+    for (const doc of unpopulated) {
+      const fn = path.basename(doc.file_path) || doc.title;
+      dbInstance.prepare("UPDATE documents SET file_name = ? WHERE id = ?").run(fn, doc.id);
+    }
+  } catch (mErr) {
+    console.warn('[DB Migration] Notice:', mErr.message);
+  }
+
   // Seed default data if needed
   seedInitialData(dbInstance);
 

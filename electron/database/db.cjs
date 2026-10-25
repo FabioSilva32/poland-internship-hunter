@@ -529,37 +529,6 @@ function seedInitialData(db) {
       ]);
     }
 
-    // Seed sample application in tracker
-    db.prepare(`
-      INSERT INTO applications (
-        id, company_id, opportunity_id, contact_id, status, priority,
-        target_role, city, date_contacted, next_follow_up_date, follow_up_count,
-        notes, source
-      ) VALUES (
-        'app-brainly-1', 'comp-brainly', 'opp-brainly-fe', 'ct-brainly',
-        'Draft prepared', 'High',
-        'Frontend / Web Engineering University Intern', 'Kraków',
-        NULL, NULL, 0,
-        'Identified Brainly as top priority in Kraków. Draft prepared and waiting for review.',
-        'Ashby Job Board'
-      )
-    `).run([]);
-
-    db.prepare(`
-      INSERT INTO applications (
-        id, company_id, opportunity_id, contact_id, status, priority,
-        target_role, city, date_contacted, next_follow_up_date, follow_up_count,
-        notes, source
-      ) VALUES (
-        'app-bloober-1', 'comp-bloober', 'opp-bloober-qa', 'ct-bloober',
-        'Ready to contact', 'High',
-        'Game QA & Functionality Testing Intern', 'Kraków',
-        NULL, NULL, 0,
-        'Bloober Team QA position aligns with Feb-Jun 2027 dates. CV ready.',
-        'Official Careers'
-      )
-    `).run([]);
-
     // Log seed audit
     db.prepare(`
       INSERT INTO audit_logs (id, action_type, entity_type, entity_id, details)

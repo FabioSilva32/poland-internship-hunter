@@ -237,58 +237,9 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
         is_active: 1
       }
     ],
-    applications: [
-      {
-        id: 'app-bloober-1',
-        company_id: 'comp-bloober',
-        company_name: 'Bloober Team',
-        target_role: 'Game QA & Functionality Testing Intern',
-        city: 'Kraków',
-        status: 'Ready to contact',
-        priority: 'High',
-        notes: 'Bloober Team QA position aligns with Feb-Jun 2027 dates. CV ready.',
-        last_activity_at: '2026-10-23',
-      },
-      {
-        id: 'app-brainly-1',
-        company_id: 'comp-brainly',
-        company_name: 'Brainly',
-        target_role: 'Frontend / Web Engineering University Intern',
-        city: 'Kraków',
-        status: 'Draft prepared',
-        priority: 'High',
-        notes: 'Identified Brainly as top priority in Kraków. Draft prepared and waiting for review.',
-        last_activity_at: '2026-10-23',
-      }
-    ],
-    drafts: [
-      {
-        id: 'draft-1',
-        company_id: 'comp-brainly',
-        company_name: 'Brainly',
-        company_city: 'Kraków',
-        recipient_email: 'recruitment@brainly.com',
-        recipient_name: 'Brainly Recruitment Desk',
-        subject: 'University Internship Inquiry (Spring 2027) – Web Multimedia Development – Candidato Universitário IPCA',
-        body_text: 'Dear Brainly Recruitment Desk,\n\nI am an undergraduate student studying Desenvolvimento Web Multimédia at IPCA in Portugal, seeking a 4-month university curricular internship in Kraków from February through June 2027.\n\nMy academic training is centered on modern web technologies (TypeScript, React, Node.js) and UI/UX design in Figma.\n\nThank you for your time.',
-        template_type: 'speculative_inquiry',
-        variant: 'concise',
-        status: 'draft',
-      }
-    ],
-    followUps: [
-      {
-        id: 'fu-1',
-        application_id: 'app-brainly-1',
-        company_name: 'Brainly',
-        target_role: 'Frontend / Web Engineering University Intern',
-        city: 'Kraków',
-        follow_up_number: 1,
-        due_date: '2026-11-02',
-        status: 'pending',
-        rule_trigger: '7_business_days_initial'
-      }
-    ]
+    applications: [],
+    drafts: [],
+    followUps: []
   };
 
   (window as any).desktopAPI = {

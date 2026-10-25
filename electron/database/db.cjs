@@ -157,7 +157,7 @@ function seedInitialData(db) {
         'https://github.com/FabioSilva32',
         'https://linkedin.com/in/candidate-ipca',
         ?,
-        'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development Student | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nLive Projects:\n• CineLog (PWA): https://cinelog-phi.vercel.app\n• Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter\n• Retiro Interior: https://retirointerior.netlify.app\n• StocksVault: https://stocksvault.netlify.app\n• ACRIALBI: https://acrialbi.netlify.app\nGitHub: https://github.com/FabioSilva32'
+        'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development Student | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nGitHub: https://github.com/FabioSilva32'
       )
     `).run([
       JSON.stringify(['Kraków', 'Warsaw', 'Gdańsk', 'Wrocław', 'Poznań']),

@@ -233,7 +233,28 @@ async function sendEmail({
     WHERE id = ?
   `).run(draftId);
 
-  // 7. Record in email_messages
+  // 7. Resolve or auto-create application record in CRM
+  let applicationId = draft.application_id;
+  if (!applicationId && draft.company_id) {
+    const existingApp = db.prepare('SELECT id FROM applications WHERE company_id = ? ORDER BY created_at DESC LIMIT 1').get(draft.company_id);
+    if (existingApp && existingApp.id) {
+      applicationId = existingApp.id;
+    } else {
+      applicationId = 'app-' + Date.now();
+      const comp = db.prepare('SELECT city, name FROM companies WHERE id = ?').get(draft.company_id);
+      const companyCity = comp?.city || 'Poland';
+      const targetRole = 'Web & Multimedia Development Intern';
+      db.prepare(`
+        INSERT INTO applications (
+          id, company_id, status, priority, target_role, city, date_contacted, source, created_at, last_activity_at
+        ) VALUES (?, ?, 'Email sent', 'High', ?, ?, datetime('now'), 'Direct Email Outreach', datetime('now'), datetime('now'))
+      `).run(applicationId, draft.company_id, targetRole, companyCity);
+    }
+    // Link application_id back to draft
+    db.prepare('UPDATE email_drafts SET application_id = ? WHERE id = ?').run(applicationId, draftId);
+  }
+
+  // Record in email_messages
   const msgId = 'msg-' + Date.now();
   db.prepare(`
     INSERT INTO email_messages (
@@ -241,7 +262,7 @@ async function sendEmail({
     ) VALUES (?, ?, ?, 'outgoing', ?, ?, ?, ?, datetime('now'), 'delivered')
   `).run(
     msgId,
-    draft.application_id,
+    applicationId,
     draft.company_id,
     fromEmail,
     draft.recipient_email,
@@ -249,21 +270,23 @@ async function sendEmail({
     draft.body_text
   );
 
-  // 8. Update application status to 'Email sent'
-  if (draft.application_id) {
-    // Calculate follow-up due date (default 7 business days from now)
+  // 8. Update application status to 'Email sent' and schedule follow-up
+  if (applicationId) {
     const dueDate = calculateBusinessDaysFromNow(7);
     db.prepare(`
       UPDATE applications 
       SET status = 'Email sent', date_contacted = datetime('now'), next_follow_up_date = ?, last_activity_at = datetime('now')
       WHERE id = ?
-    `).run(dueDate, draft.application_id);
+    `).run(dueDate, applicationId);
 
-    // Schedule 1st follow-up record
-    db.prepare(`
-      INSERT INTO follow_ups (id, application_id, follow_up_number, due_date, status, rule_trigger)
-      VALUES (?, ?, 1, ?, 'pending', '7_business_days_initial')
-    `).run('fu-' + Date.now(), draft.application_id, dueDate);
+    // Schedule 1st follow-up record if not already present
+    const existingFu = db.prepare('SELECT id FROM follow_ups WHERE application_id = ? AND follow_up_number = 1').get(applicationId);
+    if (!existingFu) {
+      db.prepare(`
+        INSERT INTO follow_ups (id, application_id, follow_up_number, due_date, status, rule_trigger)
+        VALUES (?, ?, 1, ?, 'pending', '7_business_days_initial')
+      `).run('fu-' + Date.now(), applicationId, dueDate);
+    }
   }
 
   // 9. Log audit trail

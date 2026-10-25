@@ -493,7 +493,9 @@ function sanitizeEmailOutput(text) {
     .replace(/https:\/\/cinelog-phi\.vercel\.app\/?[^\s\n•)]*/g, 'https://cinelog-phi.vercel.app')
     .replace(/https:\/\/retirointerior\.netlify\.app\/?[^\s\n•)]*/g, 'https://retirointerior.netlify.app')
     .replace(/https:\/\/stocksvault\.netlify\.app\/?[^\s\n•)]*/g, 'https://stocksvault.netlify.app')
-    .replace(/https:\/\/acrialbi\.netlify\.app\/?[^\s\n•)]*/g, 'https://acrialbi.netlify.app');
+    .replace(/https:\/\/acrialbi\.netlify\.app\/?[^\s\n•)]*/g, 'https://acrialbi.netlify.app')
+    // Remove duplicate "Live Projects:" signature clutter block
+    .replace(/\r?\n\s*Live Projects:\s*(\r?\n\s*[•\-\*][^\r\n]+)*/gi, '');
 }
 
   // 1. If Gemini API is configured or selected, use Google's free Gemini API

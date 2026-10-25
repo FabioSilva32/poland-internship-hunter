@@ -400,15 +400,22 @@ function registerIpcHandlers() {
     const id = draft.id || 'draft-' + Date.now();
     const existing = db.prepare('SELECT id FROM email_drafts WHERE id = ?').get(id);
 
+    let appId = draft.application_id || null;
+    if (!appId && draft.company_id) {
+      const existingApp = db.prepare('SELECT id FROM applications WHERE company_id = ? ORDER BY created_at DESC LIMIT 1').get(draft.company_id);
+      if (existingApp && existingApp.id) appId = existingApp.id;
+    }
+
     if (existing) {
       db.prepare(`
         UPDATE email_drafts SET
+          application_id = COALESCE(?, application_id),
           recipient_email = ?, recipient_name = ?, subject = ?, body_text = ?,
           template_type = ?, variant = ?, cv_document_id = ?, is_approved = ?,
           status = ?, updated_at = datetime('now')
         WHERE id = ?
       `).run(
-        draft.recipient_email, draft.recipient_name, draft.subject, draft.body_text,
+        appId, draft.recipient_email, draft.recipient_name, draft.subject, draft.body_text,
         draft.template_type, draft.variant || 'concise', draft.cv_document_id || null,
         draft.is_approved ? 1 : 0, draft.status || 'draft', id
       );
@@ -419,7 +426,7 @@ function registerIpcHandlers() {
           body_text, template_type, variant, cv_document_id, is_approved, status
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).run(
-        id, draft.application_id || null, draft.company_id, draft.recipient_email,
+        id, appId, draft.company_id, draft.recipient_email,
         draft.recipient_name, draft.subject, draft.body_text, draft.template_type,
         draft.variant || 'concise', draft.cv_document_id || null,
         draft.is_approved ? 1 : 0, draft.status || 'draft'

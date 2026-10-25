@@ -153,11 +153,11 @@ function seedInitialData(db) {
         ?,
         ?,
         'Undergraduate student in Web Multimedia Development at IPCA, Portugal. Passionate about software engineering, interactive frontend development, UI/UX design systems, and multimedia/game technologies. Seeking a 4-month university internship in Poland for Spring/Summer 2027 (Feb-Jun).',
-        'https://cinelog-phi.vercel.app/?tab=explore',
+        'https://cinelog-phi.vercel.app',
         'https://github.com/FabioSilva32',
         'https://linkedin.com/in/candidate-ipca',
         ?,
-        'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development Student | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nProject: https://cinelog-phi.vercel.app/?tab=explore\nGitHub: https://github.com/FabioSilva32'
+        'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development Student | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nLive Projects:\n• CineLog (PWA): https://cinelog-phi.vercel.app\n• Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter\n• Retiro Interior: https://retirointerior.netlify.app\n• StocksVault: https://stocksvault.netlify.app\n• ACRIALBI: https://acrialbi.netlify.app\nGitHub: https://github.com/FabioSilva32'
       )
     `).run([
       JSON.stringify(['Kraków', 'Warsaw', 'Gdańsk', 'Wrocław', 'Poznań']),

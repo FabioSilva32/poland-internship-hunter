@@ -31,11 +31,11 @@ if (typeof window !== 'undefined' && !(window as any).desktopAPI) {
       preferred_cities: ['Kraków', 'Warsaw', 'Gdańsk', 'Wrocław'],
       preferred_roles: ['Software Development', 'Web & Frontend', 'UI/UX Design', 'Game QA & Testing'],
       bio: 'Web Multimedia Development student at IPCA, Portugal. Seeking 4-month university internship in Poland for Spring 2027 (Feb-Jun).',
-      portfolio_url: 'https://cinelog-phi.vercel.app/?tab=explore',
+      portfolio_url: 'https://cinelog-phi.vercel.app',
       github_url: 'https://github.com/FabioSilva32',
       linkedin_url: 'https://linkedin.com/in/candidate-ipca',
       languages_spoken: ['English (Fluent - C1)', 'Portuguese (Native)'],
-      signature: 'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nProject / App: https://cinelog-phi.vercel.app/?tab=explore\nGitHub: https://github.com/FabioSilva32'
+      signature: 'Kind regards,\nFábio Júnior Fernandes Silva\nWeb Multimedia Development | IPCA\nEmail: fabioz262006@gmail.com | Phone: +351 930 534 067\nLive Projects:\n• CineLog (PWA): https://cinelog-phi.vercel.app\n• Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter\n• Retiro Interior: https://retirointerior.netlify.app\n• StocksVault: https://stocksvault.netlify.app\n• ACRIALBI: https://acrialbi.netlify.app\nGitHub: https://github.com/FabioSilva32'
     },
     companies: [
       {

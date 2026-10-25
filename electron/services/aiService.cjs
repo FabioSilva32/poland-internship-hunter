@@ -1,10 +1,11 @@
 // AI Email Generator & Template Service
 // Strictly enforces accuracy: never invents skills, projects, or credentials not in profile
 
-const getLiveProjectsBlock = (p) => `• CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app/?tab=explore
+const getLiveProjectsBlock = (p) => `• CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app
 • Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter
-• Retiro Interior (Tourism Portal): https://retirointerior.netlify.app/#conceito
-• StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app/portfolio
+• Retiro Interior (Tourism Portal): https://retirointerior.netlify.app
+• StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app
+• ACRIALBI (Creative Showcase): https://acrialbi.netlify.app
 • GitHub Profile: ${p.github_url || 'https://github.com/FabioSilva32'}`;
 
 const TEMPLATES = {
@@ -474,6 +475,27 @@ async function generateEmail({
     requiredTech: formatList(opportunity?.required_technologies),
   };
 
+function sanitizeEmailOutput(text) {
+  if (!text || typeof text !== 'string') return text;
+  return text
+    // Replace all March / June/July occurrences with February - June 2027
+    .replace(/\bMarch through June\/July 2027\b/gi, 'February through June 2027')
+    .replace(/\bMarch to June\/July 2027\b/gi, 'February to June 2027')
+    .replace(/\bMarch through June\/July\b/gi, 'February through June')
+    .replace(/\bMarch to June\/July\b/gi, 'February to June')
+    .replace(/\bMarch 1, 2027\b/gi, 'February 1, 2027')
+    .replace(/\bMarch 2027\b/gi, 'February 2027')
+    .replace(/\bstarting in March\b/gi, 'starting in February')
+    .replace(/\bfrom March\b/gi, 'from February')
+    .replace(/\bmarço de 2027 até junho\/julho de 2027\b/gi, 'fevereiro de 2027 até junho de 2027')
+    .replace(/\bmarço de 2027\b/gi, 'fevereiro de 2027')
+    // Clean all project URLs: remove ?tab=..., #..., /portfolio, etc.
+    .replace(/https:\/\/cinelog-phi\.vercel\.app\/?[^\s\n•)]*/g, 'https://cinelog-phi.vercel.app')
+    .replace(/https:\/\/retirointerior\.netlify\.app\/?[^\s\n•)]*/g, 'https://retirointerior.netlify.app')
+    .replace(/https:\/\/stocksvault\.netlify\.app\/?[^\s\n•)]*/g, 'https://stocksvault.netlify.app')
+    .replace(/https:\/\/acrialbi\.netlify\.app\/?[^\s\n•)]*/g, 'https://acrialbi.netlify.app');
+}
+
   // 1. If Gemini API is configured or selected, use Google's free Gemini API
   const activeGeminiKey = geminiKey || (apiKey && apiKey.trim().startsWith('AIzaSy') ? apiKey : null);
   if ((provider === 'gemini' || !apiKey) && activeGeminiKey) {
@@ -484,11 +506,12 @@ CRITICAL RULES:
 2. The student studies Desenvolvimento Web Multimédia at IPCA, Portugal.
 3. Internship timeframe: February 1, 2027 to June 30, 2027 (4 months) in Poland.
 4. Keep the tone professional, sincere, concise, and non-generic. No cheesy praise or artificial buzzwords.
-5. Highlight the student's live deployed projects and code repositories:
-   • CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app/?tab=explore
-   • Poland Internship Hunter (Desktop CRM): https://github.com/FabioSilva32/poland-internship-hunter
-   • Retiro Interior (Tourism Platform): https://retirointerior.netlify.app/#conceito
-   • StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app/portfolio
+5. Highlight the student's live deployed projects and code repositories (USE CLEAN DOMAIN URLS ONLY, NO SUBPATHS OR ANCHORS):
+   • CineLog (Movie & TV Tracking PWA): https://cinelog-phi.vercel.app
+   • Poland Internship Hunter (Desktop App): https://github.com/FabioSilva32/poland-internship-hunter
+   • Retiro Interior (Tourism Platform): https://retirointerior.netlify.app
+   • StocksVault (Financial Portfolio Tracker): https://stocksvault.netlify.app
+   • ACRIALBI (Creative Showcase): https://acrialbi.netlify.app
    • GitHub: https://github.com/FabioSilva32
 6. Return a JSON object with strictly two keys: "subject" and "body".
 
@@ -517,7 +540,11 @@ Custom Instructions: ${customInstructions || 'None'}`;
         if (candidateText) {
           const parsed = JSON.parse(candidateText);
           if (parsed.subject && parsed.body) {
-            return { subject: parsed.subject, body: parsed.body, provider: 'gemini' };
+            return {
+              subject: sanitizeEmailOutput(parsed.subject),
+              body: sanitizeEmailOutput(parsed.body),
+              provider: 'gemini'
+            };
           }
         }
       } else {
@@ -550,7 +577,8 @@ CRITICAL RULES:
 2. The student studies Desenvolvimento Web Multimédia at IPCA, Portugal.
 3. Internship timeframe: February 1, 2027 to June 30, 2027 (4 months) in Poland.
 4. Keep the tone professional, sincere, concise, and non-generic. No cheesy praise or artificial buzzwords.
-5. Return a JSON object with strictly two keys: "subject" and "body".`
+5. Highlight the student's live deployed projects with clean URLs (https://cinelog-phi.vercel.app, https://retirointerior.netlify.app, https://stocksvault.netlify.app, https://acrialbi.netlify.app, https://github.com/FabioSilva32).
+6. Return a JSON object with strictly two keys: "subject" and "body".`
             },
             {
               role: 'user',
@@ -569,7 +597,11 @@ Custom Instructions: ${customInstructions || 'None'}`
         const data = await response.json();
         const parsed = JSON.parse(data.choices[0].message.content);
         if (parsed.subject && parsed.body) {
-          return { subject: parsed.subject, body: parsed.body, provider: 'openai' };
+          return {
+            subject: sanitizeEmailOutput(parsed.subject),
+            body: sanitizeEmailOutput(parsed.body),
+            provider: 'openai'
+          };
         }
       }
     } catch (err) {
@@ -580,8 +612,8 @@ Custom Instructions: ${customInstructions || 'None'}`
   // Built-in deterministic template (guaranteed 100% reliable, zero external network dependency)
   const result = generatorFn(profile, compData);
   return {
-    subject: result.subject,
-    body: result.body,
+    subject: sanitizeEmailOutput(result.subject),
+    body: sanitizeEmailOutput(result.body),
     provider: 'builtin-template'
   };
 }

@@ -354,7 +354,7 @@ const htmlContent = `<!DOCTYPE html>
           </div>
           <div class="hero-link-box">
             <span>🔗 Live Application:</span>
-            <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank">cinelog-phi.vercel.app/?tab=explore ↗</a>
+            <a href="https://cinelog-phi.vercel.app" target="_blank">cinelog-phi.vercel.app ↗</a>
           </div>
         </div>
 
@@ -392,11 +392,11 @@ const htmlContent = `<!DOCTYPE html>
             <div class="support-title">Retiro Interior — Tourism Web Portal</div>
             <div class="support-tech">HTML5 • CSS3 • JavaScript • Netlify</div>
             <div class="support-desc">
-              Responsive platform showcasing interior regional tourism, eco-retreats, and nature experiences with interactive <code>#conceito</code> routing and fluid viewports.
+              Responsive platform showcasing interior regional tourism, eco-retreats, and nature experiences with interactive responsive sections, fluid viewports, and retreat galleries.
             </div>
           </div>
           <div class="support-link">
-            🔗 <a href="https://retirointerior.netlify.app/#conceito" target="_blank">retirointerior.netlify.app ↗</a>
+            🔗 <a href="https://retirointerior.netlify.app" target="_blank">retirointerior.netlify.app ↗</a>
           </div>
         </div>
 
@@ -410,7 +410,7 @@ const htmlContent = `<!DOCTYPE html>
             </div>
           </div>
           <div class="support-link">
-            🔗 <a href="https://stocksvault.netlify.app/portfolio" target="_blank">stocksvault.netlify.app ↗</a>
+            🔗 <a href="https://stocksvault.netlify.app" target="_blank">stocksvault.netlify.app ↗</a>
           </div>
         </div>
 
@@ -424,7 +424,7 @@ const htmlContent = `<!DOCTYPE html>
             </div>
           </div>
           <div class="support-link">
-            🔗 <a href="https://acrialbi.netlify.app/#ideias" target="_blank">acrialbi.netlify.app ↗</a>
+            🔗 <a href="https://acrialbi.netlify.app" target="_blank">acrialbi.netlify.app ↗</a>
           </div>
         </div>
       </div>

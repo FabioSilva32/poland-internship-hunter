@@ -78,6 +78,25 @@ export const EmailGenerator: React.FC = () => {
     if (selectedCompanyId) setSelectedCompId(selectedCompanyId);
   }, [selectedCompanyId]);
 
+  const cleanEmailText = (text: string) => {
+    if (!text) return text;
+    return text
+      .replace(/\bMarch through June\/July 2027\b/gi, 'February through June 2027')
+      .replace(/\bMarch to June\/July 2027\b/gi, 'February to June 2027')
+      .replace(/\bMarch through June\/July\b/gi, 'February through June')
+      .replace(/\bMarch to June\/July\b/gi, 'February to June')
+      .replace(/\bMarch 1, 2027\b/gi, 'February 1, 2027')
+      .replace(/\bMarch 2027\b/gi, 'February 2027')
+      .replace(/\bstarting in March\b/gi, 'starting in February')
+      .replace(/\bfrom March\b/gi, 'from February')
+      .replace(/\bmarço de 2027 até junho\/julho de 2027\b/gi, 'fevereiro de 2027 até junho de 2027')
+      .replace(/\bmarço de 2027\b/gi, 'fevereiro de 2027')
+      .replace(/https:\/\/cinelog-phi\.vercel\.app\/?[^\s\n•)]*/g, 'https://cinelog-phi.vercel.app')
+      .replace(/https:\/\/retirointerior\.netlify\.app\/?[^\s\n•)]*/g, 'https://retirointerior.netlify.app')
+      .replace(/https:\/\/stocksvault\.netlify\.app\/?[^\s\n•)]*/g, 'https://stocksvault.netlify.app')
+      .replace(/https:\/\/acrialbi\.netlify\.app\/?[^\s\n•)]*/g, 'https://acrialbi.netlify.app');
+  };
+
   useEffect(() => {
     if (selectedCompId && window.desktopAPI?.getCompanyDetails) {
       window.desktopAPI.getCompanyDetails(selectedCompId).then((comp: any) => {
@@ -89,6 +108,8 @@ export const EmailGenerator: React.FC = () => {
           setRecipientEmail(`careers@${(comp?.name || 'company').toLowerCase().replace(/\s+/g, '')}.com`);
           setRecipientName(`${comp?.name || 'Company'} Hiring Team`);
         }
+        // Reset body text so that switching companies auto-generates a fresh tailored draft
+        setBodyText('');
       });
     }
   }, [selectedCompId]);
@@ -113,8 +134,8 @@ export const EmailGenerator: React.FC = () => {
           customInstructions,
         });
 
-        setSubject(res.subject);
-        setBodyText(res.body);
+        setSubject(cleanEmailText(res.subject));
+        setBodyText(cleanEmailText(res.body));
         showToast('Personalized email generated successfully!', 'success');
       } catch (err: any) {
         showToast('Generation error: ' + err.message, 'error');
@@ -123,12 +144,12 @@ export const EmailGenerator: React.FC = () => {
     setGenerating(false);
   };
 
-  // Initial auto-generation on load
+  // Initial auto-generation on load or company switch
   useEffect(() => {
-    if (currentCompany && !bodyText) {
+    if (currentCompany && !bodyText && !generating) {
       handleGenerate();
     }
-  }, [currentCompany]);
+  }, [currentCompany, bodyText]);
 
   // Save Draft to SQLite
   const handleSaveDraft = async () => {

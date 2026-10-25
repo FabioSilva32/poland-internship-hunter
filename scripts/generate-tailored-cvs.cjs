@@ -254,9 +254,9 @@ const CV_TEMPLATES = [
         <span class="contact-item">📧 fabioz262006@gmail.com</span>
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
-        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
-        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
-        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
+        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -347,7 +347,7 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog — Movie & TV Series Tracking PWA (Live Production App)</div>
-            <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
+            <div class="proj-tech">React • JavaScript / TypeScript • TMDB REST API • Mobile PWA • <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Progressive Web App for media exploration and review diaries with TMDB API integration, fluid touch navigation, dark-canvas styling, and instant edge CDN rendering on Vercel.
             </div>
@@ -363,15 +363,15 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">Retiro Interior & ACRIALBI — Live Deployed Web Platforms</div>
-            <div class="proj-tech">HTML5 • CSS3 • JavaScript • Responsive UX • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-tech">HTML5 • CSS3 • JavaScript • Responsive UX • <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
             <div class="proj-desc">
-              Designed modern, responsive web portals on Netlify featuring anchor section routing (<code>#conceito</code>, <code>#ideias</code>), mobile-first flex/grid layouts, and accessible contrast compliance.
+              Designed modern, responsive web portals on Netlify featuring fluid section navigation, mobile-first flex/grid layouts, and accessible contrast compliance.
             </div>
           </div>
 
           <div class="proj-item">
             <div class="proj-title">StocksVault — Financial Portfolio & Stock Tracker (Live Production App)</div>
-            <div class="proj-tech">Angular • TypeScript • REST API • Data Visualizations • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
+            <div class="proj-tech">Angular • TypeScript • REST API • Data Visualizations • <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
               Architected and deployed a responsive financial portfolio manager with reactive Angular services for real-time asset allocations, comparative stock analytics, interactive watchlists, and performance metrics dashboards.
             </div>
@@ -457,9 +457,9 @@ const CV_TEMPLATES = [
         <span class="contact-item">📧 fabioz262006@gmail.com</span>
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
-        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
-        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
-        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
+        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -550,7 +550,7 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog — Mobile PWA & Cinema Discovery UI/UX Architecture</div>
-            <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
+            <div class="proj-tech">Mobile-First UI • PWA • Dark-Mode Canvas • <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Designed an immersive, tactile cinema tracking application interface. Formatted high-contrast movie poster exploration grids, responsive bottom-sheet navigation, user diary review logging, and custom collection organization.
             </div>
@@ -566,15 +566,15 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">Retiro Interior & ACRIALBI — Live Deployed Web Platforms</div>
-            <div class="proj-tech">Figma • Responsive UX • Visual Hierarchy • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-tech">Figma • Responsive UX • Visual Hierarchy • <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
             <div class="proj-desc">
-              Created digital UI experiences featuring concept showcases (<code>#conceito</code>, <code>#ideias</code>), user-centered content layouts, accessible color palettes, and responsive grid systems for diverse display sizes.
+              Created digital UI experiences featuring concept showcases, user-centered content layouts, accessible color palettes, and responsive grid systems for diverse display sizes.
             </div>
           </div>
 
           <div class="proj-item">
             <div class="proj-title">StocksVault — Financial Dashboard & Asset Comparison UX (Live App)</div>
-            <div class="proj-tech">Angular • Financial Visualizations • High-Density Tables • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
+            <div class="proj-tech">Angular • Financial Visualizations • High-Density Tables • <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
               Designed clean data tables and equity comparison views. Focused on typographic hierarchy for financial metrics, intuitive watchlist filters, and responsive layout scaling across mobile and desktop.
             </div>
@@ -659,9 +659,9 @@ const CV_TEMPLATES = [
         <span class="contact-item">📧 fabioz262006@gmail.com</span>
         <span class="contact-item">📞 +351 930 534 067</span>
         <span class="contact-item">📍 Braga / Vila Verde, Portugal</span>
-        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
-        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
-        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
+        <span class="contact-item">📈 <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></span>
+        <span class="contact-item">🌐 <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></span>
+        <span class="contact-item">🌿 <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a></span>
         <span class="contact-item">💻 <a href="https://github.com/FabioSilva32" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">github.com/FabioSilva32</a></span>
         <span class="badge-relocate">✓ Relocating to Poland (Feb–Jun 2027)</span>
       </div>
@@ -752,7 +752,7 @@ const CV_TEMPLATES = [
           
           <div class="proj-item">
             <div class="proj-title">CineLog PWA — Cross-Device Functional & API Testing</div>
-            <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • <a href="https://cinelog-phi.vercel.app/?tab=explore" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
+            <div class="proj-tech">PWA Testing • TMDB API Validation • Mobile Viewports • <a href="https://cinelog-phi.vercel.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">cinelog-phi.vercel.app</a></div>
             <div class="proj-desc">
               Conducted cross-browser and mobile device verification for a movie tracking web application. Tested TMDB REST API response edge-cases, asynchronous media poster caching, network latency resilience, and touch interaction fidelity.
             </div>
@@ -768,15 +768,15 @@ const CV_TEMPLATES = [
 
           <div class="proj-item">
             <div class="proj-title">Retiro Interior & ACRIALBI — Responsive UI/UX & Web Verification</div>
-            <div class="proj-tech">Cross-Browser Testing • Responsive Viewports • <a href="https://retirointerior.netlify.app/#conceito" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app/#ideias" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
+            <div class="proj-tech">Cross-Browser Testing • Responsive Viewports • <a href="https://retirointerior.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">retirointerior.netlify.app</a> • <a href="https://acrialbi.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">acrialbi.netlify.app</a></div>
             <div class="proj-desc">
-              Executed cross-platform verification for deployed Netlify web applications. Verified viewport breakpoints, anchor navigation reliability (<code>#conceito</code>, <code>#ideias</code>), DOM element accessibility, and typography scaling.
+              Executed cross-platform verification for deployed Netlify web applications. Verified viewport breakpoints, section navigation reliability, DOM element accessibility, and typography scaling.
             </div>
           </div>
 
           <div class="proj-item">
             <div class="proj-title">StocksVault — Financial Computation & Component Integrity Testing (Live App)</div>
-            <div class="proj-tech">Angular • Data Validation • Boundary Testing • <a href="https://stocksvault.netlify.app/portfolio" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
+            <div class="proj-tech">Angular • Data Validation • Boundary Testing • <a href="https://stocksvault.netlify.app" target="_blank" style="color:var(--accent);font-weight:700;text-decoration:none;">stocksvault.netlify.app</a></div>
             <div class="proj-desc">
               Conducted functional verification across stock portfolio allocation formulas, currency conversions, comparison table sorting logic, and asynchronous REST state transitions.
             </div>
